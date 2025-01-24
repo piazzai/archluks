@@ -17,15 +17,18 @@ sed -i 's/^MODULES=()/MODULES=(nvme)/' /etc/mkinitcpio.conf
 sed -i 's/^\(HOOKS.*\)block\(.*\)/\1block encrypt lvm2\2/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
+source <(grep '=' config.ini)
+
 # set hardware clock
+timedatectl set-timezone $tz
 hwclock --systohc
 
-# generate en_US locale
-sed -i "s/^#\(en_US.UTF-8\)/\1/" /etc/locale.gen && locale-gen
-printf '%s' "LANG=en_US.UTF-8" > /etc/locale.conf
+# generate locale
+sed -i "s/^#\($locale.UTF-8\)/\1/" /etc/locale.gen && locale-gen
+printf '%s' "LANG=$locale.UTF-8" > /etc/locale.conf
 
 # set hostname and add hosts entries
-printf '%s' arch > /etc/hostname
+printf '%s' $hostname > /etc/hostname
 printf '%s\n' '127.0.0.1 localhost' '::1 localhost' >> /etc/hosts
 
 # create sudo user
