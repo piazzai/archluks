@@ -12,7 +12,7 @@ timedatectl set-ntp true
 
 # wipe current signature and (optionally) securely erase all data
 wipefs -a /dev/nvme0n1
-read -rp "If you want to securely erase all data on the device, type 'yes' in capital letters: " choice
+read -rp "Do you want to securely erase all data on the device? (Type 'yes' in capital letters): " choice
 if [[ "$choice" == 'YES' ]] ; then pv /dev/urandom -o /dev/nvme0n1 ; fi
 
 # create new partitions
