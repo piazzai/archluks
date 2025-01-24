@@ -21,12 +21,12 @@ iwctl station wlan0 connect "your-wifi" -P "wifi-password"
 You can test your connection with `ping -c 3 archlinux.org`. If it works, download the files:
 
 ```sh
-curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/archluks.sh
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/install.sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/chroot.sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/config.ini
 ```
 
-You can use [nano](https://man.archlinux.org/man/nano) to open `config.ini` and edit it according to your needs. When you are ready, type `bash archluks.sh` to start the installation process. The script will automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
+You can use [nano](https://man.archlinux.org/man/nano) to open `config.ini` and edit it according to your needs. When you are ready, type `bash install.sh` to start the installation process. The script will automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
 
 Once into the OS, you can access the wireless network through [nmcli](https://man.archlinux.org/man/nmcli):
 
@@ -35,4 +35,4 @@ sudo systemctl start NetworkManager
 sudo nmcli device wifi connect "your-wifi" password "wifi-password"
 ```
 
-You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you need. The `custom.sh` script installs additional software based on my tastes and workflow. This is most likely not what you need, but it can be a helpful reference.
+You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you need. The `setup.sh` script installs additional software based on my tastes and workflow. It is probably not what you need, but it can be a helpful reference.
