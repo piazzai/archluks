@@ -28,7 +28,7 @@ if [ "$check" != "$userpw" ] ; then echo "Error: passwords do not match." && exi
 printf '%s\n' "Device: $device" "CPU make: $cpu" "Timezone: $tz" \
   "Locale: $locale" "Hostname: $hostname" "Username: $username"
 
-read -rp "Passwords match. Proceed (y/N)?" choice
+read -rp "User passwords match. Proceed (y/N)?" choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # install bootloader
