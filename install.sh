@@ -12,7 +12,7 @@ SWAP=${SWAP:-'64G'}
 read -rp "This will wipe $DEVICE and repartition it with $EFI for the EFI system, \
   $SWAP for swap memory, and all remaining space for the filesystem. Data currently \
   on $DEVICE will be overwritten. Proceed? (default: no) " PROCEED
-if [[ "$ERASE" == [Yy] || "$ERASE" == [Yy][Ee][Ss] ]]; then
+if [[ "$PROCEED" == [Yy] || "$PROCEED" == [Yy][Ee][Ss] ]]; then
     echo "Proceeding."
 else
     echo "Aborting."
