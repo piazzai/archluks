@@ -4,7 +4,7 @@ set -e
 # prompt partition details
 read -rp 'Type the desired size of the EFI partition: [500M] ' efisize
 efisize=${efisize:-'500M'}
-read -rsp 'Type the desired size of the swap partition: [64G] ' swapsize
+read -rp 'Type the desired size of the swap partition: [64G] ' swapsize
 swapsize=${swapsize:-'64G'}
 
 # set clock
