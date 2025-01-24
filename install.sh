@@ -34,9 +34,9 @@ iwctl --passphrase "$wifipw" station wlan0 connect "$wifiname"
 # set clock
 timedatectl set-ntp true
 
-# wipe current drive signature and (optionally) overwrite all data
+# wipe current signature and (optionally) securely erase all data
 wipefs -a "$device"
-read -rp "Do you want to overwrite all data on the device (y/N)?" choice
+read -rp "Do you want to securely erase all data on the device (y/N)? " choice
 if [[ "$choice" == [Yy] || "$choice" == [Yy][Ee][Ss] ]] ; then pv /dev/urandom -o "$device" ; fi
 
 # create new partitions
