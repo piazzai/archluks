@@ -1,31 +1,31 @@
 #!/bin/bash
 set -e
 
-read -rp "What is the name of your device? [/dev/nvme0n1]" device
+read -rp "What is the name of your device? [/dev/nvme0n1] " device
 device=${device:-'/dev/nvme0n1'}
 
-read -rp "What is the name of your cpu make? [intel]" cpu
+read -rp "What is the name of your cpu make? [intel] " cpu
 cpu=${cpu:-'intel'}
 
-read -rp "Set EFI partition size: [1G]" efi
+read -rp "Set EFI partition size: [1G] " efi
 efi=${efi:-'1G'}
 
-read -rp "Set swap partition size: [4G]" swap
+read -rp "Set swap partition size: [4G] " swap
 swap=${swap:-'4G'}
 
-read -rp "What is the name of your WiFi network?" wifiname
+read -rp "What is the name of your WiFi network? " wifiname
 if [ "$wifiname" == '' ] ; then echo "Error: WiFi name required." && exit 1 ; fi
 
-read -rp "What is the password of your WiFi network?" wifipw
+read -rps "What is the password of your WiFi network? " wifipw
 if [ "$wifipw" == '' ] ; then echo "Error: WiFi password required." && exit 1 ; fi
 
-read -rp "Repeat password:" check
+read -rps "Repeat password: " check
 if [ "$check" != "$wifipw" ] ; then echo "Error: passwords do not match." && exit 1 ; fi
 
-printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI partition size: $efi" \
+printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI partition size: $efi " \
     "Swap partition size: $swap" "WiFi network: $wifiname"
 
-read -rp "Network passwords match. Proceed (y/N)?" choice
+read -rp "Network passwords match. Proceed (y/N)? " choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # connect to wifi network 

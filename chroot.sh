@@ -1,34 +1,34 @@
 #!/bin/bash
 set -e
 
-read -rp "What is the name of your device again? [/dev/nvme0n1]" device
+read -rp "What is the name of your device again? [/dev/nvme0n1] " device
 device=${device:-'/dev/nvme0n1'}
 
-read -rp "What is the name of your CPU make again? [intel]" cpu
+read -rp "What is the name of your CPU make again? [intel] " cpu
 cpu=${cpu:-'intel'}
 
-read -rp "Set timezone: [UTC]" tz
+read -rp "Set timezone: [UTC] " tz
 tz=${tz:-'UTC'}
 
-read -rp "Set locale: [en_US]" locale
+read -rp "Set locale: [en_US] " locale
 locale=${locale:-'en_US'}
 
-read -rp "Set hostname: [arch]" hostname
+read -rp "Set hostname: [arch] " hostname
 hostname=${hostname:-'arch'}
 
-read -rp "Set username:" username
+read -rp "Set username: " username
 if [ "$username" == '' ] ; then echo "Error: username required." && exit 1 ; fi
 
-read -rp "Set password:" userpw
+read -rps "Set password: " userpw
 if [ "$userpw" == '' ] ; then echo "Error: password required." && exit 1 ; fi
 
-read -rp "Repeat password:" check
+read -rps "Repeat password: " check
 if [ "$check" != "$userpw" ] ; then echo "Error: passwords do not match." && exit 1 ; fi
 
 printf '%s\n' "Device: $device" "CPU make: $cpu" "Timezone: $tz" \
   "Locale: $locale" "Hostname: $hostname" "Username: $username"
 
-read -rp "User passwords match. Proceed (y/N)?" choice
+read -rp "User passwords match. Proceed (y/N)? " choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # install bootloader
