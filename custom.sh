@@ -63,11 +63,11 @@ gem install --user-install neocities
 
 # install r and packages
 sudo pacman -S r
-rlibs="Sys.getenv('R_LIBS_USER')"
-cran="c(CRAN = 'https://cran.r-project.org')"
-R -e "dir.create(path = $rlibs, showWarnings = FALSE, recursive = TRUE)"
-R -e "install.packages('languageserver', lib = $rlibs, repos = $cran)"
-R -e "install.packages('renv', lib = $rlibs, repos = $cran)"
+RLIBS="Sys.getenv('R_LIBS_USER')"
+MIRROR="c(CRAN = 'https://cran.r-project.org')"
+R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
+R -e "install.packages('languageserver', lib = $RLIBS, repos = $MIRROR)"
+R -e "install.packages('renv', lib = $RLIBS, repos = $MIRROR)"
 
 # install texlive
 sudo pacman -S texlive
