@@ -22,19 +22,20 @@ You can test your connection with `ping -c 3 archlinux.org`. If it works, downlo
 
 ```sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/install.sh
-curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/setup.sh
 ```
 
-Type `bash install.sh` to start the installation process. The script will prompt you for input. When it's done, chroot into the logical volume and run the next script:
+Type `bash install.sh` to start the installation process. The script will prompt you for input. When it's done, chroot into the logical volume and move on to the next script:
 
 ```sh
 arch-chroot /mnt
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/setup.sh
 bash setup.sh
 ```
 
-When it terminates, you can exit, unmount, and reboot into the OS:
+When it terminates, you can remove the script, exit, unmount, and reboot into the OS:
 
 ```sh
+rm setup.sh
 exit
 umount -R /mnt
 reboot
