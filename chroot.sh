@@ -1,8 +1,5 @@
 #!/bin/bash
-set -e
-
-# read variables
-bash config.sh
+source <(grep '=' config.ini) && set -e
 
 # install bootloader
 bootctl install

@@ -1,8 +1,5 @@
 #!/bin/bash
-set -e
-
-# read variables
-bash config.sh
+source <(grep '=' config.ini) && set -e
 
 # connect to wifi network 
 iwctl --passphrase "$wifipw" station wlan0 connect "$wifi"
