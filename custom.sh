@@ -4,11 +4,10 @@ set -e
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 
-# install additional packages
-sudo pacman -S /mnt base-devel mesa pacman-contrib tlp ufw git git-lfs
-
-# install terminal utilities
-sudo pacman -S rsync gzip tree neofetch fprintd reflector github-cli
+# install drivers and utilities
+sudo pacman -S base-devel mesa pacman-contrib reflector tlp ufw git git-lfs \
+  github-cli nano rsync gzip tree neofetch fprintd xcalib xiccd pipewire \
+  pipewire-alsa pipewire-jack pipewire-pulse wireplumber easyeffects
 
 # install desktop environment and greeter
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
@@ -44,9 +43,6 @@ read -rp "Enter your Mullvad VPN account number: " ACCOUNT
 mullvad account login "$ACCOUNT"
 mullvad relay set location ch
 mullvad connect
-
-# install monitor calibrator, color manager, audio server, and equalizer
-sudo pacman -S xcalib xiccd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber easyeffects
 
 # download audio and color profiles
 cd ~ && curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
