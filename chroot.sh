@@ -17,7 +17,7 @@ sed -i 's/^MODULES=()/MODULES=(nvme)/' /etc/mkinitcpio.conf
 sed -i 's/^\(HOOKS.*\)block\(.*\)/\1block encrypt lvm2\2/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
-# set hardware clock
+# set clock
 timedatectl set-timezone $tz
 hwclock --systohc
 
