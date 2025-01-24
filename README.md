@@ -15,7 +15,7 @@ Before installing, you should read the official [installation guide](https://wik
 After booting from the medium, you should connect to a network and download these scripts. If you have a wired connection, it should work automatically; if you don't, you can authenticate into a wifi using [iwctl](https://man.archlinux.org/man/iwctl).
 
 ```sh
-iwctl station wlan0 connect <wifi-name> -P <wifi-password>
+iwctl station wlan0 connect "your-wifi" -P "wifi-password"
 ```
 
 You can test your connection with `ping -c 3 archlinux.org`. If it works, download the repository:
@@ -32,7 +32,7 @@ Once into the OS, you can access the wireless network through [nmcli](https://ma
 
 ```sh
 sudo systemctl start NetworkManager
-sudo nmcli device wifi connect <wifi-name> password <wifi-password>
+sudo nmcli device wifi connect "your-wifi" password "wifi-password"
 ```
 
 You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you need. The `custom.sh` script installs additional software based on my tastes and workflow. This is most likely not what you need, but it can be a helpful reference.
