@@ -8,7 +8,7 @@ sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 sudo pacman -S /mnt base-devel mesa pacman-contrib tlp ufw git git-lfs
 
 # install terminal utilities
-sudo pacman -S curl rsync tar gzip tree neofetch fprintd reflector github-cli
+sudo pacman -S rsync gzip tree neofetch fprintd reflector github-cli
 
 # install desktop environment and greeter
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
