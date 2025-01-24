@@ -19,7 +19,7 @@ hostname=${hostname:-'arch'}
 read -rp "Set username: " username
 if [ "$username" == '' ] ; then echo "Error: username required." && exit 1 ; fi
 
-read -rp "Set password: " userpw
+read -rsp "Set password: " userpw
 if [ "$userpw" == '' ] ; then echo "Error: password required." && exit 1 ; fi
 
 printf '%s\n' "Device: $device" "CPU make: $cpu" "Timezone: $tz" \

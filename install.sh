@@ -16,7 +16,7 @@ swap=${swap:-'4G'}
 read -rp "What is the name of your WiFi network? " wifiname
 if [ "$wifiname" == '' ] ; then echo "Error: WiFi name required." && exit 1 ; fi
 
-read -rp "What is the password of your WiFi network? " wifipw
+read -rsp "What is the password of your WiFi network? " wifipw
 if [ "$wifipw" == '' ] ; then echo "Error: WiFi password required." && exit 1 ; fi
 
 printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI partition size: $efi " \
