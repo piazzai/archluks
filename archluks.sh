@@ -1,8 +1,11 @@
 #!/bin/bash
-source <(grep '=' config.ini) && set -e
+set -e
+source <(grep '=' config.ini)
 
-# connect to wifi network and set clock
+# connect to wifi network 
 iwctl --passphrase "$wifipw" station wlan0 connect "$wifi"
+
+# set clock
 timedatectl set-ntp true
 
 # wipe current drive signature and (optionally) overwrite all data
