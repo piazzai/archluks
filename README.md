@@ -22,7 +22,7 @@ You can test your connection with `ping -c 3 archlinux.org`. If it works, downlo
 
 ```sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/install.sh
-curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/chroot.sh
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/setup.sh
 ```
 
 Type `bash install.sh` to start the installation process. The script will prompt you for input and automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
