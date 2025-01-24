@@ -13,6 +13,7 @@ if [ "$check" != "$userpw" ] ; then echo "error: passwords do not match" && exit
 bootctl install
 
 # create boot entry
+uuid=$(blkid /dev/nvme0n1p2 | sed 's/.* UUID="\([^\"]\).*/\1/')
 printf '%s\n' 'title Arch Linux' \
   'linux /vmlinuz-linux' \
   "initrd /intel-ucode.img" \
@@ -30,12 +31,12 @@ timedatectl set-timezone UTC
 hwclock --systohc
 
 # generate locale
-sed -i "s/^#\(en_US.UTF-8\)/\1/" /etc/locale.gen
+sed -i 's/^#\(en_US.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
-printf '%s' 'LANG=en_US.UTF-8' > /etc/locale.conf
+printf '%s' LANG=en_US.UTF-8 > /etc/locale.conf
 
 # set hostname and add hosts entries
-printf '%s' 'arch' > /etc/hostname
+printf '%s' arch > /etc/hostname
 printf '%s\n' '127.0.0.1 localhost' '::1 localhost' >> /etc/hosts
 
 # create sudo user
