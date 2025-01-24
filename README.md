@@ -1,12 +1,12 @@
 # archluks
 
-These are my scripts for an encrypted [Arch](https://www.archlinux.org) installation on a 64-bit UEFI system. The scripts take a target drive, wipe it, and partition it into an EFI boot and a LUKS-encrypted physical root. The physical root is further partitioned into two logical volumes, swap and (logical) root. The OS is installed on the logical root and the encryption key set during installation is always required for booting.
+These are my scripts for an encrypted [Arch](https://www.archlinux.org) installation on a 64-bit UEFI system. The scripts take a target NVMe drive, wipe it, and partition it into an EFI boot and a LUKS-encrypted physical root. The physical root is further partitioned into two logical volumes, swap and (logical) root. The OS is installed on the logical root and the encryption key set during installation is always required for booting.
 
-The scripts require you to specify a target drive, sudo credentials, and the desired size of EFI and swap partitions. All remaining space on the drive is allocated to the logical root. You are also given the option to securely erase all data from the drive by overwriting it with pseudorandom numbers. Depending on the size of the device this can be very time-consuming, but because old data could still be recovered otherwise it is cryptographically safer.
+The scripts require you to specify a target drive and the desired size of EFI and swap partitions. All remaining space on the drive is allocated to the logical root. You are also given the option to securely erase all data from the drive by overwriting it with pseudorandom numbers. Depending on the size of the device this can be time-consuming, but because old data could be recoverable otherwise it is cryptographically safer.
 
-Partitioning the drive, even without opting for secure erasure, requires overwriting and can result in the irrevocable loss of existing data. Make sure you target the right drive and understand what the scripts are doing. Double-check everything before running them. I decline responsibility for any unintended loss caused by these scripts.
+Partitioning the drive, even without opting for secure erasure, can result in the irrevocable loss of existing data. Make sure you target the right drive and understand what the scripts are doing. Double-check everything. I decline responsibility for any unintended loss caused by these scripts.
 
-The Arch installation will be a pure command-line environment with the packages [base](https://archlinux.org/packages/core/any/base/), [linux](https://archlinux.org/packages/core/x86_64/linux/), [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/), [lvm2](https://archlinux.org/packages/core/x86_64/lvm2/), [intel-ucode](https://archlinux.org/packages/extra/any/intel-ucode/) or [amd-ucode](https://archlinux.org/packages/core/any/amd-ucode/) (depending on CPU make), [sudo](https://archlinux.org/packages/core/x86_64/sudo/), [networkmanager](https://archlinux.org/packages/extra/x86_64/networkmanager/), and their dependencies. Everything else can be added afterward.
+The Arch installation will be a pure command-line environment with the packages [base](https://archlinux.org/packages/core/any/base/), [intel-ucode](https://archlinux.org/packages/extra/any/intel-ucode/), [linux](https://archlinux.org/packages/core/x86_64/linux/), [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/), [lvm2](https://archlinux.org/packages/core/x86_64/lvm2/), [networkmanager](https://archlinux.org/packages/extra/x86_64/networkmanager/), [sudo](https://archlinux.org/packages/core/x86_64/sudo/), and their dependencies. Everything else can be added later.
 
 ## Usage
 
@@ -45,7 +45,7 @@ Once into the OS, you can access the wireless network through [nmcli](https://ma
 
 ```sh
 sudo systemctl start NetworkManager
-sudo nmcli device wifi connect your-wifi --ask-password
+sudo nmcli device wifi connect your-wifi --ask
 ```
 
 You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you want. The `custom.sh` script installs additional software based on my needs, which is unlikely to be what you want, but it can be a helpful reference.
