@@ -35,4 +35,4 @@ sudo systemctl start NetworkManager
 sudo nmcli device wifi connect <wifi-name> password <wifi-password>
 ```
 
-You can now use [pacman](https://man.archlinux.org/man/pacman) to install whatever else you need. The `custom.sh` script installs additional software according to my own tastes and workflow. This is most likely not what you need, but it can be a helpful reference.
+You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you need. The `custom.sh` script installs additional software based on my tastes and workflow. This is most likely not what you need, but it can be a helpful reference.
