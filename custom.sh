@@ -34,8 +34,7 @@ sudo systemctl enable tlp
 sudo systemctl enable ly
 
 # install aur helper
-mkdir ~/Downloads && cd ~/Downloads
-git clone https://aur.archlinux.org/yay.git
+cd ~ && git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
 
@@ -50,8 +49,8 @@ mullvad connect
 sudo pacman -S xcalib xiccd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber easyeffects
 
 # download audio and color profiles
-curl -fsSLO https://raw.githubusercontent.com/FrameworkComputer/linux-docs/refs/heads/main/easy-effects/fw13-easy-effects.json
-curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
+cd ~ && curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
+cd ~ && curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
 # install git lfs
