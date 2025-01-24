@@ -21,7 +21,7 @@ if [ "$CHECK" != "$PASSWORD" ] ; then echo 'Passwords do not match. Aborting.' &
 bootctl install
 
 # create boot entry
-UUID=$(blkid "/dev/${DEVICE}p2" | sed 's/.* UUID="\([^\"]*\).*/\1/')
+UUID=$(blkid "${DEVICE}p2" | sed 's/.* UUID="\([^\"]*\).*/\1/')
 printf '%s\n' 'title Arch Linux' \
   'linux /vmlinuz-linux' \
   'initrd /intel-ucode.img' \
