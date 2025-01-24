@@ -1,10 +1,10 @@
 # archluks
 
-These are my scripts for an encrypted [Arch](https://www.archlinux.org) installation on a 64-bit UEFI system. The scripts expect a NVMe drive in Channel 0 (`/dev/nvme0n1`). This is wiped and partitioned into an EFI system and a LUKS-encrypted physical root. The physical root is further partitioned into two logical volumes, swap and root. The OS is installed on the logical root and the encryption key is always required to boot into it.
+These are my scripts for an encrypted [Arch](https://www.archlinux.org) installation on a 64-bit UEFI system. The scripts take a target drive, wipe it, and partition it into an EFI boot and a LUKS-encrypted physical root. The physical root is further partitioned into two logical volumes, swap and (logical) root. The OS is installed on the logical root and the encryption key set during installation is always required for booting.
 
-The scripts require you to specify the desired size of the EFI and swap partitions, allocating all remaining space to the logical root. They also require the username and password of a sudo account. During installation, you are given the option to securely erase all data from the target drive by overwriting it with pseudorandom numbers. Depending on the size of the drive, this option can be time-consuming, but because old data could be readable otherwise it is cryptographically safer.
+The scripts require you to specify a target drive, sudo credentials, and the desired size of EFI and swap partitions. All remaining space on the drive is allocated to the logical root. You are also given the option to securely erase all data from the drive by overwriting it with pseudorandom numbers. Depending on the size of the device this can be very time-consuming, but because old data could still be recovered otherwise it is cryptographically safer.
 
-Partitioning the drive, even without securely erasing, requires overwriting existing data and can result in irrevocable loss. Make sure you have the right drive in Channel 0. Make sure you understand what the scripts are doing and double-check everything before running them. I decline responsibility for any unintended losses caused by your use of these scripts.
+Partitioning the drive, even without opting for secure erasure, requires overwriting and can result in the irrevocable loss of existing data. Make sure you target the right drive and understand what the scripts are doing. Double-check everything before running them. I decline responsibility for any unintended loss caused by these scripts.
 
 The Arch installation will be a pure command-line environment with the packages [base](https://archlinux.org/packages/core/any/base/), [linux](https://archlinux.org/packages/core/x86_64/linux/), [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/), [lvm2](https://archlinux.org/packages/core/x86_64/lvm2/), [intel-ucode](https://archlinux.org/packages/extra/any/intel-ucode/) or [amd-ucode](https://archlinux.org/packages/core/any/amd-ucode/) (depending on CPU make), [sudo](https://archlinux.org/packages/core/x86_64/sudo/), [networkmanager](https://archlinux.org/packages/extra/x86_64/networkmanager/), and their dependencies. Everything else can be added afterward.
 
@@ -18,7 +18,7 @@ After booting from the medium, connect to a network to download the install scri
 iwctl station wlan0 connect your-wifi
 ```
 
-You can test your connection with `ping -c 3 archlinux.org`. If it works, download the script and run it.
+You can test your connection with `ping -c3 archlinux.org`. If it works, download the script and run it.
 
 ```sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/install.sh
