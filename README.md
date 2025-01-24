@@ -25,7 +25,20 @@ curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/install.sh
 curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/setup.sh
 ```
 
-Type `bash install.sh` to start the installation process. The script will prompt you for input and automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
+Type `bash install.sh` to start the installation process. The script will prompt you for input. When it's done, chroot into the logical volume and run the next script:
+
+```sh
+arch-chroot /mnt
+bash setup.sh
+```
+
+When it terminates, you can exit, unmount, and reboot into the OS:
+
+```sh
+exit
+umount -R /mnt
+reboot
+```
 
 Once into the OS, you can access the wireless network through [nmcli](https://man.archlinux.org/man/nmcli):
 
@@ -34,4 +47,4 @@ sudo systemctl start NetworkManager
 sudo nmcli device wifi connect <ssid> password <password>
 ```
 
-You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you need. The `postinstall.sh` script installs additional software based on my tastes and workflow. It is most likely not what you need, but it can be a helpful reference.
+You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you want. The `postinstall.sh` script installs additional software based on my needs. It is unlikely to be what you also want, but it can be a helpful reference.
