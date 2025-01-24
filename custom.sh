@@ -40,8 +40,8 @@ cd .. && rm -rf yay
 
 # install mullvad vpn and connect
 yay -S mullvad-vpn-bin
-read -rp "Enter Mullvad account number:" mullvacc
-mullvad account login "$mullvacc"
+read -rp "Enter your Mullvad VPN account number: " ACCOUNT
+mullvad account login "$ACCOUNT"
 mullvad relay set location ch
 mullvad connect
 
