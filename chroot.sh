@@ -12,7 +12,7 @@ printf '%s\n' 'title Arch Linux' \
   'initrd /initramfs-linux.img' \
   "options cryptdevice=UUID=$uuid:vg root=/dev/mapper/vg-root rw" > /boot/loader/entries/arch.conf
 
-# add modules to initial ramdisk
+# add modules and hooks to initial ramdisk
 sed -i 's/^MODULES=()/MODULES=(nvme)/' /etc/mkinitcpio.conf
 sed -i 's/^\(HOOKS.*\)block\(.*\)/\1block encrypt lvm2\2/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
