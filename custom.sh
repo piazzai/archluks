@@ -13,7 +13,7 @@ sudo pacman -S base-devel mesa pacman-contrib reflector tlp ufw git git-lfs \
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
   xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin \
   xfce4-screenshooter xfce4-taskmanager pavucontrol nm-connection-editor \
-  network-manager-applet mousepad parole ristretto libreoffice-fresh gvfs ly
+  network-manager-applet gvfs mousepad parole ristretto libreoffice-fresh ly
 
 # configure greeter
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
