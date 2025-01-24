@@ -19,9 +19,7 @@ if [ "$wifiname" == '' ] ; then echo "Error: WiFi name required." && exit 1 ; fi
 read -rp "What is the password of your WiFi network? " wifipw
 if [ "$wifipw" == '' ] ; then echo "Error: WiFi password required." && exit 1 ; fi
 
-printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI partition size: $efi " \
-    "Swap partition size: $swap" "WiFi network: $wifiname"
-
+printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI size: $efi " "Swap size: $swap" "WiFi network: $wifiname"
 read -rp "Proceed (y/N)? " choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
