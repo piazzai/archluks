@@ -19,16 +19,13 @@ hostname=${hostname:-'arch'}
 read -rp "Set username: " username
 if [ "$username" == '' ] ; then echo "Error: username required." && exit 1 ; fi
 
-read -rps "Set password: " userpw
+read -rp "Set password: " userpw
 if [ "$userpw" == '' ] ; then echo "Error: password required." && exit 1 ; fi
-
-read -rps "Repeat password: " check
-if [ "$check" != "$userpw" ] ; then echo "Error: passwords do not match." && exit 1 ; fi
 
 printf '%s\n' "Device: $device" "CPU make: $cpu" "Timezone: $tz" \
   "Locale: $locale" "Hostname: $hostname" "Username: $username"
 
-read -rp "User passwords match. Proceed (y/N)? " choice
+read -rp "Proceed (y/N)? " choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # install bootloader
