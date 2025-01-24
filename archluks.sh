@@ -31,7 +31,7 @@ swapon /dev/mapper/vg-swap
 
 # bootstrap arch installation
 reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
-pacstrap -K /mnt base linux linux-firmware lvm2 $cpu-ucode sudo networkmanager
+pacstrap -K /mnt base $cpu-ucode linux linux-firmware lvm2 networkmanager sudo
 
 # generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
