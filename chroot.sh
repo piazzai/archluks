@@ -65,5 +65,5 @@ useradd -m -G wheel "$username"
 echo "$username:$userpw" | chpasswd
 sed -i 's/^# \(%wheel ALL=(ALL:ALL) ALL\)/\1/' /etc/sudoers
 
-# exit arch-chroot
-exit
+# # exit arch-chroot
+# exit
