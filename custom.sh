@@ -21,6 +21,7 @@ sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M %Z/' /etc/ly/config.ini
 sudo sed -i 's/^\(clear_password =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(initial_info_text =\) null/\1 arch linux/' /etc/ly/config.ini
 sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
+sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 
 # enable firewall
 sudo ufw enable
