@@ -29,7 +29,7 @@ read -rp "Network passwords match. Proceed (y/N)?" choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # connect to wifi network 
-iwctl --passphrase "$wifipw" station wlan0 connect "$wifi"
+iwctl --passphrase "$wifipw" station wlan0 connect "$wifiname"
 
 # set clock
 timedatectl set-ntp true
