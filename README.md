@@ -18,12 +18,12 @@ After booting from the medium, you should connect to a network and download thes
 iwctl station wlan0 connect "your-wifi" -P "wifi-password"
 ```
 
-You can test your connection with `ping -c 3 archlinux.org`. If it works, download the repository:
+You can test your connection with `ping -c 3 archlinux.org`. If it works, download the files:
 
 ```sh
-curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/archluks.sh
-curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/chroot.sh
-curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/config.ini
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/archluks.sh
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/chroot.sh
+curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/config.ini
 ```
 
 You can use [nano](https://man.archlinux.org/man/nano) to open `config.ini` and edit it according to your needs. When you are ready, type `bash archluks.sh` to start the installation process. The script will automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
