@@ -9,9 +9,9 @@ EFI=${EFI:-'500M'}
 read -rp 'What is the size of the swap partition? (default: 64G) ' SWAP
 SWAP=${SWAP:-'64G'}
 
-read -rp "This will wipe $DEVICE and repartition it with $EFI for the EFI system, \
-  $SWAP for swap memory, and all remaining space for the filesystem. Data currently \
-  on $DEVICE will be overwritten. Proceed? (default: no) " PROCEED
+# prompt confirmation
+echo "This will wipe $DEVICE and create a new partition table with $EFI for EFI, $SWAP for swap, and all remaining space for the filesystem."
+read -rp "Data currently on $DEVICE will be overwritten. Proceed? (default: no) " PROCEED
 if [[ "$PROCEED" == [Yy] || "$PROCEED" == [Yy][Ee][Ss] ]]; then
     echo "Proceeding."
 else
