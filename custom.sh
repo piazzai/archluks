@@ -4,10 +4,10 @@ set -e
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 
-# install drivers and utilities
+# install drivers, servers, and utilities
 sudo pacman -S base-devel mesa pacman-contrib reflector tlp ufw git git-lfs \
-  github-cli nano rsync gzip tree neofetch fprintd xcalib xiccd pipewire \
-  pipewire-alsa pipewire-jack pipewire-pulse wireplumber easyeffects
+  github-cli nano rsync gzip tree neofetch fprintd xorg-server xcalib xiccd \
+  pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber easyeffects
 
 # install desktop environment and greeter
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
@@ -67,6 +67,7 @@ RLIBS="Sys.getenv('R_LIBS_USER')"
 MIRROR="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
 R -e "install.packages('languageserver', lib = $RLIBS, repos = $MIRROR)"
+R -e "install.packages('tidyverse', lib = $RLIBS, repos = $MIRROR)"
 R -e "install.packages('renv', lib = $RLIBS, repos = $MIRROR)"
 
 # install texlive
@@ -81,27 +82,27 @@ codium --install-extension esbenp.prettier-vscode
 codium --install-extension reditorsupport.r
 
 # install keepass and cryptomator
-pacman -S keepassxc
+sudo pacman -S keepassxc
 yay -S cryptomator-bin
 
 # install dropbox
 yay -S dropbox
 
 # install signal
-pacman -S signal-desktop
+sudo pacman -S signal-desktop
 
 # install web browser and mail client
-pacman -S firefox thunderbird
+sudo pacman -S firefox thunderbird
 
 # install graphics editors
-pacman -S gimp inkscape
+sudo pacman -S gimp inkscape
 
 # install spotify
-pacman -S spotify-launcher
+sudo pacman -S spotify-launcher
 
 # set bash variables
-printf '%s\n' '' '# Add GPG_TTY for gh auth' "export GPG_TTY=\$(tty)" \
-  '' '# Make gems executable' "export PATH=\$PATH:\$(ruby -e 'puts Gem.user_dir')/bin" \
+printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" \
+  '' '# Make user gems executable' "export PATH=\$PATH:\$(ruby -e 'puts Gem.user_dir')/bin" \
   '' '# Add custom scripts' "export PATH=\$HOME/.bin:\$PATH" >> ~/.bashrc
 
 # update and reboot
