@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# read variables
+bash config.sh
+
 # install bootloader
 bootctl install
 

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
-source <(grep '=' config.ini)
+
+# read variables
+bash config.sh
 
 # connect to wifi network 
 iwctl --passphrase "$wifipw" station wlan0 connect "$wifi"
@@ -42,12 +44,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # run chroot.sh
 mkdir /mnt/archluks
 cp -r ./* /mnt/archluks/
-export dev
-export cpu
-export tz
-export locale
-export user
-export userpw
 arch-chroot /mnt bash /archluks/chroot.sh
 rm -rf /mnt/archluks
 
