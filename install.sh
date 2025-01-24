@@ -13,18 +13,19 @@ efi=${efi:-'1G'}
 read -rp "Set swap partition size: [4G]" swap
 swap=${swap:-'4G'}
 
-read -rp "What is the name of your wifi network?" wifiname
-if [ "$wifiname" == '' ] ; then echo "error: network name required" && exit 1 ; fi
+read -rp "What is the name of your WiFi network?" wifiname
+if [ "$wifiname" == '' ] ; then echo "Error: WiFi name required." && exit 1 ; fi
 
-read -rp "What is the password of your wifi network?" wifipw
-if [ "$wifipw" == '' ] ; then echo "error: network password required" && exit 1 ; fi
+read -rp "What is the password of your WiFi network?" wifipw
+if [ "$wifipw" == '' ] ; then echo "Error: WiFi password required." && exit 1 ; fi
 
-read -rp "Repeat password for $wifiname:" check
-if [ "$check" != "$wifipw" ] ; then echo "error: passwords do not match" && exit 1 ; fi
+read -rp "Repeat password:" check
+if [ "$check" != "$wifipw" ] ; then echo "Error: passwords do not match." && exit 1 ; fi
 
-printf '%ś\n' "device: $device" "cpu make: $cpu" "efi partition size: $efi" \
-    "swap partition size: $swap" "network name: $wifiname"
-read -rp "Proceed (y/N)?" choice
+printf '%s\n' "Device: $device" "CPU make: $cpu" "EFI partition size: $efi" \
+    "Swap partition size: $swap" "WiFi network: $wifiname"
+
+read -rp "Network passwords match. Proceed (y/N)?" choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # connect to wifi network 
@@ -35,7 +36,7 @@ timedatectl set-ntp true
 
 # wipe current drive signature and (optionally) overwrite all data
 wipefs -a "$device"
-read -rp "Do you want to overwrite all data on $device (y/N)?" choice
+read -rp "Do you want to overwrite all data on the device (y/N)?" choice
 if [[ "$choice" == [Yy] || "$choice" == [Yy][Ee][Ss] ]] ; then pv /dev/urandom -o "$device" ; fi
 
 # create new partitions
