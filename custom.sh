@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+source <(grep '=' config.ini) && set -e
 
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
@@ -41,8 +41,7 @@ cd .. && rm -rf yay
 
 # install mullvad vpn and connect
 yay -S mullvad-vpn-bin
-acc=0000000000000000
-mullvad account login $acc
+mullvad account login $mullvacc
 mullvad relay set location ch
 mullvad connect
 
