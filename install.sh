@@ -33,7 +33,7 @@ fi
 
 # create new partitions
 printf '%s\n' 'label: gpt' ",$EFI,U," ',,L,' | sfdisk "$DEVICE"
-mkfs.vfat -F 32 "${DEVICE}p1"
+mkfs.vfat -F32 "${DEVICE}p1"
 cryptsetup luksFormat "${DEVICE}p2"
 cryptsetup luksOpen "${DEVICE}p2" crypt
 
