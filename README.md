@@ -21,9 +21,9 @@ iwctl station wlan0 connect <wifi-name> -P <wifi-password>
 You can test your connection with `ping -c 3 archlinux.org`. If it works, download the repository:
 
 ```sh
-wget https://github.com/piazzai/archluks/archive/refs/heads/master.zip
-unzip master.zip
-cd archluks-master
+curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/archluks.sh
+curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/chroot.sh
+curl -fsSLO https://raw.githubusercontent.com/piazzai/archluks/refs/heads/master/config.ini
 ```
 
 You can use [nano](https://man.archlinux.org/man/nano) to open `config.ini` and edit it according to your needs. When you are ready, type `bash archluks.sh` to start the installation process. The script will automatically reboot at the end, allowing you to disconnect the installation medium and boot into the OS.
