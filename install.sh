@@ -62,13 +62,3 @@ pacstrap -K /mnt base "$cpu-ucode" linux linux-firmware lvm2 networkmanager sudo
 
 # generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
-
-# run chroot.sh
-# mkdir /mnt/archluks
-# cp -r ./* /mnt/archluks/
-# arch-chroot /mnt bash /archluks/chroot.sh
-# rm -rf /mnt/archluks
-
-# # unmount and reboot
-# umount -R /mnt
-# reboot

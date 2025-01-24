@@ -61,6 +61,3 @@ printf '%s\n' '127.0.0.1 localhost' '::1 localhost' >> /etc/hosts
 useradd -m -G wheel "$username"
 echo "$username:$userpw" | chpasswd
 sed -i 's/^# \(%wheel ALL=(ALL:ALL) ALL\)/\1/' /etc/sudoers
-
-# # exit arch-chroot
-# exit
