@@ -22,10 +22,13 @@ if [ "$username" == '' ] ; then echo "Error: username required." && exit 1 ; fi
 read -rsp "Set password: " userpw
 if [ "$userpw" == '' ] ; then echo "Error: password required." && exit 1 ; fi
 
+read -rsp "Repeat password: " check
+if [ "$check" != "$userpw" ] ; then echo "Error: passwords do not match." && exit 1 ; fi
+
 printf '%s\n' "Device: $device" "CPU make: $cpu" "Timezone: $tz" \
   "Locale: $locale" "Hostname: $hostname" "Username: $username"
 
-read -rp "Proceed (y/N)? " choice
+read -rp "Passwords match. Proceed (y/N)? " choice
 if [[ "$choice" != [Yy] && "$choice" != [Yy][Ee][Ss] ]] ; then echo "Aborted." && exit 1 ; fi
 
 # install bootloader
