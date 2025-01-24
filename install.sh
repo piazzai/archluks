@@ -1,30 +1,46 @@
 #!/bin/bash
 set -e
 
-# prompt partition details
-read -rp 'Type the desired size of the EFI partition: [500M] ' efisize
-efisize=${efisize:-'500M'}
-read -rp 'Type the desired size of the swap partition: [64G] ' swapsize
-swapsize=${swapsize:-'64G'}
+# input partition sizes
+read -rp 'What is the target device? (default: /dev/nvme0n1) ' DEVICE
+DEVICE=${DEVICE:-'/dev/nvme0n1'}
+read -rp 'What is the size of the EFI partition? (default: 500M) ' EFI
+EFI=${EFI:-'500M'}
+read -rp 'What is the size of the swap partition? (default: 64G) ' SWAP
+SWAP=${SWAP:-'64G'}
+
+read -rp "This will wipe $DEVICE and repartition it with $EFI for the EFI system, \
+  $SWAP for swap memory, and all remaining space for the filesystem. Data currently \
+  on $DEVICE will be overwritten. Proceed? (default: no) " PROCEED
+if [[ "$ERASE" == [Yy] || "$ERASE" == [Yy][Ee][Ss] ]]; then
+    echo "Proceeding."
+else
+    echo "Aborting."
+    exit 1
+fi
 
 # set clock
 timedatectl set-ntp true
 
 # wipe current signature and (optionally) securely erase all data
-wipefs -a /dev/nvme0n1
-read -rp "Do you want to securely erase all data on the device? (Type 'yes' in capital letters): " choice
-if [[ "$choice" == 'YES' ]] ; then pv /dev/urandom -o /dev/nvme0n1 ; fi
+wipefs -a "$DEVICE"
+read -rp "Do you want to securely erase all data on $DEVICE? (default: no) " ERASE
+if [[ "$ERASE" == [Yy] || "$ERASE" == [Yy][Ee][Ss] ]]; then
+    pv /dev/urandom -o "$DEVICE"
+else
+    echo "Skipping secure erasure."
+fi
 
 # create new partitions
-printf '%s\n' 'label: gpt' ",$efisize,U," ',,L,' | sfdisk /dev/nvme0n1
-mkfs.vfat -F 32 /dev/nvme0n1p1
-cryptsetup luksFormat /dev/nvme0n1p2
-cryptsetup luksOpen /dev/nvme0n1p2 crypt
+printf '%s\n' 'label: gpt' ",$EFI,U," ',,L,' | sfdisk "$DEVICE"
+mkfs.vfat -F 32 "${DEVICE}p1"
+cryptsetup luksFormat "${DEVICE}p2"
+cryptsetup luksOpen "${DEVICE}p2" crypt
 
 # create logical volumes
 pvcreate /dev/mapper/crypt
 vgcreate vg /dev/mapper/crypt
-lvcreate -L "$swapsize" vg -n swap
+lvcreate -L "$SWAP" vg -n swap
 lvcreate -l 100%FREE vg -n root
 mkswap /dev/mapper/vg-swap
 mkfs.ext4 /dev/mapper/vg-root
@@ -32,7 +48,7 @@ mkfs.ext4 /dev/mapper/vg-root
 # mount volumes
 mount /dev/mapper/vg-root /mnt
 mkdir /mnt/boot
-mount /dev/nvme0n1p1 /mnt/boot
+mount "${DEVICE}p1" /mnt/boot
 swapon /dev/mapper/vg-swap
 
 # bootstrap arch installation
