@@ -36,7 +36,8 @@ bash chroot.sh
 When it terminates, you can remove the script, exit, unmount, and reboot into the OS.
 
 ```sh
-rm chroot.sh && exit
+rm chroot.sh
+exit
 umount -R /mnt
 reboot
 ```
