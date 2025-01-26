@@ -26,10 +26,7 @@ sudo pacman -S ufw
 sudo ufw enable
 
 # install aur helper
-sudo pacman -S base-devel git
-cd ~ && git clone https://aur.archlinux.org/yay.git
-cd ~/yay && makepkg -si
-cd ~ && rm -rf yay
+sudo pacman -S git
 
 # install and connect mullvad vpn
 yay -S mullvad-vpn-bin
