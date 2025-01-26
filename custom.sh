@@ -43,17 +43,8 @@ mullvad connect
 # install opengl drivers
 sudo pacman -S mesa
 
-# install display server and color manager
-sudo pacman -S xorg xcalib xiccd
-
-# download recommended color profile
-curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
-  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
-
-# install audio server and equalizer
-sudo pacman -S easyeffects pipewire-alsa pipewire-jack
-
-# download recommended audio profile
+# install equalizer and download audio profile
+sudo pacman -S easyeffects
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # install, configure, and enable greeter
@@ -87,6 +78,7 @@ RLIBS="Sys.getenv('R_LIBS_USER')"
 MIRROR="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
 R -e "install.packages('languageserver', lib = $RLIBS, repos = $MIRROR)"
+R -e "install.packages('tidyverse', lib = $RLIBS, repos = $MIRROR)"
 R -e "install.packages('renv', lib = $RLIBS, repos = $MIRROR)"
 
 # install texlive
@@ -118,6 +110,8 @@ sudo pacman -S gimp inkscape
 
 # install spotify
 sudo pacman -S spotify-launcher
+
+# install hyprland
 
 # install xfce4
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
