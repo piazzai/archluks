@@ -118,12 +118,10 @@ sudo pacman -S gimp inkscape
 sudo pacman -S spotify-launcher
 
 # install xfce4
-sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin xfce4-places-plugin \
-  xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin xfce4-sensors-plugin xfce4-screenshooter \
-  xfce4-taskmanager mousepad parole ristretto libreoffice-fresh pavucontrol network-manager-applet gvfs nm-connection-editor
-
-# install sway
-sudo pacman -S sway swaybg swayidle swaylock
+sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
+  xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin \
+  xfce4-sensors-plugin xfce4-screenshooter xfce4-taskmanager mousepad parole \
+  ristretto libreoffice-fresh pavucontrol network-manager-applet gvfs nm-connection-editor
 
 # set bash variables
 printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" \
