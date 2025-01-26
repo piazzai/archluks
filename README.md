@@ -35,10 +35,9 @@ curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/chroot.sh
 bash chroot.sh
 ```
 
-When it terminates, you can remove the script, exit, unmount, and reboot into the OS.
+When it terminates, you can exit, unmount, and reboot into the OS.
 
 ```sh
-rm chroot.sh
 exit
 umount -R /mnt
 reboot
