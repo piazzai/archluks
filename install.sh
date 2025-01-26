@@ -21,9 +21,10 @@ else
     exit 1
 fi
 
-
-# wipe current signature and (optionally) securely erase all data
+# wipe current signature
 wipefs -a "$DEVICE"
+
+# securely erase all data (optional)
 read -rp "Do you want to securely erase all data on $DEVICE? (default: no) " ERASE
 if [[ "$ERASE" == [Yy] || "$ERASE" == [Yy][Ee][Ss] ]]; then
     pv /dev/urandom -o "$DEVICE"
@@ -49,6 +50,8 @@ mkfs.ext4 /dev/mapper/vg-root
 mount /dev/mapper/vg-root /mnt
 mkdir /mnt/boot
 mount "${DEVICE}p1" /mnt/boot
+
+# enable swap
 swapon /dev/mapper/vg-swap
 
 # bootstrap arch installation
