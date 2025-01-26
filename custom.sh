@@ -27,6 +27,11 @@ sudo ufw enable
 
 # install aur helper
 sudo pacman -S git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
 
 # install and connect mullvad vpn
 yay -S mullvad-vpn-bin
@@ -42,14 +47,14 @@ sudo pacman -S mesa
 sudo pacman -S xorg xcalib xiccd
 
 # download recommended color profile
-cd ~ && curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
+curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
 # install audio server and equalizer
 sudo pacman -S easyeffects pipewire-alsa pipewire-jack
 
 # download recommended audio profile
-cd ~ && curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
+curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # install, configure, and enable greeter
 sudo pacman -S ly
@@ -117,8 +122,8 @@ sudo pacman -S spotify-launcher
 # install xfce4
 sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
   xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin \
-  xfce4-sensors-plugin xfce4-screenshooter xfce4-taskmanager mousepad parole \
-  ristretto libreoffice-fresh pavucontrol network-manager-applet gvfs nm-connection-editor
+  xfce4-sensors-plugin xfce4-screenshooter xfce4-taskmanager pavucontrol \
+  network-manager-applet nm-connection-editor gvfs
 
 # set bash variables
 printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" \
