@@ -4,7 +4,7 @@ These are my scripts for an encrypted [Arch](https://www.archlinux.org) installa
 
 The scripts require you to specify a target drive and the desired size of EFI and swap partitions. All remaining space on the drive is allocated to the logical root. You are also given the option to securely erase all data from the drive by overwriting it with pseudorandom numbers. Depending on the size of the device this can be time-consuming, but because old data could be recoverable otherwise it is cryptographically safer.
 
-Partitioning the drive, even without opting for secure erasure, can result in the irrevocable loss of existing data. Make sure you target the right drive and understand what the scripts are doing. Double-check everything. I decline responsibility for any unintended loss caused by these scripts.
+Partitioning the drive, even without opting for secure erasure, can result in the irrevocable loss of existing data. Make sure you target the right drive and understand what the scripts are doing. Double-check everything. _I decline responsibility for any unintended loss caused by these scripts._
 
 The Arch installation will be a pure command-line environment with the packages [base](https://archlinux.org/packages/core/any/base/), [intel-ucode](https://archlinux.org/packages/extra/any/intel-ucode/), [linux](https://archlinux.org/packages/core/x86_64/linux/), [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/), [lvm2](https://archlinux.org/packages/core/x86_64/lvm2/), [networkmanager](https://archlinux.org/packages/extra/x86_64/networkmanager/), [sudo](https://archlinux.org/packages/core/x86_64/sudo/), and their dependencies. Everything else can be added later.
 
