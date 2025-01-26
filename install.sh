@@ -4,6 +4,8 @@ set -e
 # input partition sizes
 read -rp 'What is the target device? (default: /dev/nvme0n1) ' DEVICE
 DEVICE=${DEVICE:-'/dev/nvme0n1'}
+read -rp "What is your CPU make? (default: 'intel') " CPU
+CPU=${CPU:-'intel'}
 read -rp 'What is the size of the EFI partition? (default: 500M) ' EFI
 EFI=${EFI:-'500M'}
 read -rp 'What is the size of the swap partition? (default: 64G) ' SWAP
@@ -51,7 +53,7 @@ swapon /dev/mapper/vg-swap
 
 # bootstrap arch installation
 reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
-pacstrap -K /mnt base intel-ucode linux linux-firmware lvm2 networkmanager sudo
+pacstrap -K /mnt base base-devel "$CPU-ucode" linux linux-firmware lvm2 networkmanager sudo
 
 # generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab

@@ -4,6 +4,8 @@ set -e
 # prompt sudo user credentials
 read -rp 'What was the target device again? (default: /dev/nvme0n1) ' DEVICE
 DEVICE=${DEVICE:-'/dev/nvme0n1'}
+read -rp "What was your CPU make again? (default: 'intel') " CPU
+CPU=${CPU:-'intel'}
 read -rp 'What is your timezone? (default: UTC) ' TIMEZONE
 TIMEZONE=${TIMEZONE:-'UTC'}
 read -rp 'What is your locale? (default: en_US) ' LOCALE
@@ -24,7 +26,7 @@ bootctl install
 UUID=$(blkid "${DEVICE}p2" | sed 's/.* UUID="\([^\"]*\).*/\1/')
 printf '%s\n' 'title Arch Linux' \
   'linux /vmlinuz-linux' \
-  'initrd /intel-ucode.img' \
+  "initrd /$CPU-ucode.img" \
   'initrd /initramfs-linux.img' \
   "options cryptdevice=UUID=$UUID:vg root=/dev/mapper/vg-root rw" \
   > /boot/loader/entries/arch.conf
