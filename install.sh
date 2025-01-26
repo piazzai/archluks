@@ -19,8 +19,6 @@ else
     exit 1
 fi
 
-# set clock
-timedatectl set-ntp true
 
 # wipe current signature and (optionally) securely erase all data
 wipefs -a "$DEVICE"
