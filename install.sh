@@ -35,11 +35,11 @@ fi
 printf '%s\n' 'label: gpt' ",$EFI,U," ',,L,' | sfdisk "$DEVICE"
 mkfs.vfat -F32 "${DEVICE}p1"
 cryptsetup luksFormat "${DEVICE}p2"
-cryptsetup luksOpen "${DEVICE}p2" crypt
+cryptsetup luksOpen "${DEVICE}p2" cryptroot
 
-# create logical volumes
-pvcreate /dev/mapper/crypt
-vgcreate vg /dev/mapper/crypt
+# create and format logical volumes
+pvcreate /dev/mapper/cryptroot
+vgcreate vg /dev/mapper/cryptroot
 lvcreate -L "$SWAP" vg -n swap
 lvcreate -l 100%FREE vg -n root
 mkswap /dev/mapper/vg-swap
