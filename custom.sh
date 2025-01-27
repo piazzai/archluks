@@ -1,29 +1,8 @@
 #!/bin/bash
 set -e
 
-# configure pacman
-sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
-
-# enable network manager
-sudo systemctl enable NetworkManager
-
-# enable filesystem trim
-sudo systemctl enable fstrim.timer
-
-# install and enable battery life optimizer
-sudo pacman -S tlp
-sudo systemctl enable tlp
-
-# install and enable pacman cache clearing
-sudo pacman -S pacman-contrib
-sudo systemctl enable paccache.timer
-
-# install pacman mirror selector
-sudo pacman -S reflector
-
-# install and enable firewall
-sudo pacman -S ufw
-sudo ufw enable
+# install opengl drivers
+sudo pacman -S mesa
 
 # install aur helper
 sudo pacman -S git
@@ -32,20 +11,6 @@ cd yay
 makepkg -si
 cd ..
 rm -rf yay
-
-# install and connect mullvad vpn
-yay -S mullvad-vpn-bin
-read -rp "Enter your Mullvad VPN account number: " MULLVAD
-mullvad account login "$MULLVAD"
-mullvad relay set location ch
-mullvad connect
-
-# install opengl drivers
-sudo pacman -S mesa
-
-# install equalizer and download audio profile
-sudo pacman -S easyeffects
-curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # install, configure, and enable greeter
 sudo pacman -S ly
@@ -57,15 +22,55 @@ sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 sudo systemctl enable ly
 
+# install hyprland
+# https://github.com/JaKooLit/Arch-Hyprland
+git clone https://github.com/JaKooLit/Arch-Hyprland.git
+cd Arch-Hyprland
+chmod +x install.sh
+./install.sh
+cd ..
+rm -rf Arch-Hyprland
+
+# enable network manager
+sudo systemctl enable NetworkManager
+
+# enable filesystem trim
+sudo systemctl enable fstrim.timer
+
+# install and enable pacman cache clearing
+sudo systemctl enable paccache.timer
+
+# install and enable battery life optimizer
+sudo pacman -S tlp
+sudo systemctl enable tlp
+
+# install pacman mirror selector
+sudo pacman -S reflector
+
+# install and enable firewall
+sudo pacman -S ufw
+sudo ufw enable
+
+# install and connect mullvad vpn
+yay -S mullvad-vpn-bin
+read -rp "Enter your Mullvad VPN account number: " MULLVAD
+mullvad account login "$MULLVAD"
+mullvad relay set location ch
+mullvad connect
+
+# install globalprotect client
+yay -S globalprotect-openconnect-git
+
+# install equalizer and download audio profile
+sudo pacman -S easyeffects
+curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
+
 # install command-line utilities
-sudo pacman -S nano rsync github-cli fprintd
+sudo pacman -S rsync github-cli fprintd
 
 # install git lfs
 sudo pacman -S git-lfs
 git lfs install
-
-# install globalprotect client
-yay -S globalprotect-openconnect-git
 
 # install ruby, bundler, and gems
 sudo pacman -S ruby ruby-bundler
@@ -111,19 +116,10 @@ sudo pacman -S gimp inkscape
 # install spotify
 sudo pacman -S spotify-launcher
 
-# install hyprland
-
-# install xfce4
-sudo pacman -S xfce4 xfce4-notifyd xfce4-battery-plugin xfce4-notes-plugin \
-  xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin \
-  xfce4-sensors-plugin xfce4-screenshooter xfce4-taskmanager pavucontrol \
-  network-manager-applet nm-connection-editor gvfs
-
 # set bash variables
 printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" \
   '' '# Make user-installed gems executable' "export PATH=\$PATH:\$(ruby -e 'puts Gem.user_dir')/bin" \
   '' '# Include custom scripts' "export PATH=\$HOME/.bin:\$PATH" >> ~/.bashrc
 
 # update and reboot
-yay
-reboot
+yay && reboot
