@@ -65,7 +65,7 @@ sudo pacman -S easyeffects
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # install command-line utilities
-sudo pacman -S rsync github-cli fprintd
+sudo pacman -S tree rsync github-cli fprintd
 
 # install git lfs
 sudo pacman -S git-lfs
