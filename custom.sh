@@ -23,7 +23,6 @@ sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 sudo systemctl enable ly
 
 # install hyprland
-# https://github.com/JaKooLit/Arch-Hyprland
 git clone https://github.com/JaKooLit/Arch-Hyprland.git
 cd Arch-Hyprland
 chmod +x install.sh
