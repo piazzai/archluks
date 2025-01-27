@@ -121,4 +121,5 @@ printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" 
   '' '# Include custom scripts' "export PATH=\$HOME/.bin:\$PATH" >> ~/.bashrc
 
 # update and reboot
-yay && reboot
+yay
+reboot
