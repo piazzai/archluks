@@ -46,7 +46,7 @@ Once into the OS, you can access the wireless network through [nmcli](https://ma
 
 ```sh
 sudo systemctl start NetworkManager
-sudo nmcli device wifi connect your-wifi --ask
+nmcli device wifi connect your-wifi --ask
 ```
 
 You can now use [pacman](https://man.archlinux.org/man/pacman) to install anything else you want. The `custom.sh` script installs additional software based on my needs, which is unlikely to be what you want, but it can be a helpful reference.
