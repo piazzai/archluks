@@ -47,9 +47,6 @@ git lfs install
 sudo pacman -S gvfs network-manager-applet nm-connection-editor pavucontrol pipewire-pulse xfce4 xfce4-battery-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-taskmanager xfce4-whiskermenu-plugin xorg-server
 yay -S menulibre mugshot
 
-# install terminal emulator
-sudo pacman -S kitty zsh
-
 # install text editor
 sudo pacman -S vim
 
