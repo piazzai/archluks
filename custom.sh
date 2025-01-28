@@ -65,7 +65,7 @@ sudo pacman -S libreoffice-fresh
 # install color manager and download color profile
 sudo pacman -S xcalib xiccd
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
-    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
 # install equalizer and download audio profile
 sudo pacman -S easyeffects
@@ -117,6 +117,7 @@ install -dm0 .dropbox-dist
 yay -S thunar-dropbox
 
 # set bash variables
-printf '%s\n' '' '# Add GPG_TTY for gh authentication' "export GPG_TTY=\$(tty)" \
+printf '%s\n' '' '# Add variable for gh authentication' "export GPG_TTY=\$(tty)" \
+  '' '# Add variable for backup sync' "BAK=\$HOME/Backup" \
   '' '# Make user-installed gems executable' "export PATH=\$PATH:\$(ruby -e 'puts Gem.user_dir')/bin" \
   '' '# Include custom scripts' "export PATH=\$HOME/.bin:\$PATH" >> ~/.bashrc
