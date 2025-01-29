@@ -51,7 +51,7 @@ sudo pacman -S gvfs network-manager-applet nm-connection-editor pavucontrol pipe
 yay -S menulibre mugshot
 
 # install text editor
-sudo pacman -S gvim
+sudo pacman -S mousepad
 
 # install image viewer
 sudo pacman -S viewnior
