@@ -29,47 +29,29 @@ sudo systemctl enable tlp
 sudo pacman -S ufw gufw
 sudo ufw enable
 
-# install aur helper
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
-
-# install vpn software
-yay -S mullvad-vpn-bin globalprotect-openconnect-git
-
-# initialize git lfs
-sudo pacman -S git-lfs
-git lfs install
-
-# install desktop environment
-sudo pacman -S gvfs network-manager-applet nm-connection-editor pavucontrol pipewire-pulse xfce4 \
-  xfce4-battery-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin \
-  xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-taskmanager xfce4-whiskermenu-plugin \
-  xorg-server
-yay -S menulibre mugshot
-
-# install text editor
-sudo pacman -S mousepad
-
-# install image viewer
-sudo pacman -S viewnior
-
-# install media player
-sudo pacman -S vlc pipewire-jack
-
-# install office suite
-sudo pacman -S libreoffice-fresh
+# install display server
+sudo pacman -S xorg
 
 # install color manager and download color profile
 sudo pacman -S xcalib xiccd
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
+# install window manager, notification daemon, and app launcher
+sudo pacman -S i3 dunst dmenu xss-lock
+
+# install audio server
+sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+
 # install equalizer and download audio profile
 sudo pacman -S easyeffects
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
+
+# install network tray applet
+sudo pacman -S network-manager-applet
+
+# install terminal emulator
+sudo pacman -S alacritty
 
 # install ruby bundler and gems
 sudo pacman -S ruby-bundler
@@ -93,6 +75,26 @@ yay -S vscodium-bin
 codium --install-extension James-Yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension reditorsupport.r
+
+# install aur helper
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
+
+# install vpn software
+yay -S mullvad-vpn-bin globalprotect-openconnect-git
+
+# initialize git lfs
+sudo pacman -S git-lfs
+git lfs install
+
+# install image viewer
+sudo pacman -S viewnior
+
+# install media player
+sudo pacman -S vlc
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
