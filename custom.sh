@@ -11,7 +11,7 @@ sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 # install and configure greeter
 sudo pacman -S ly
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
-sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M %Z/' /etc/ly/config.ini
+sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M:%S %Z/' /etc/ly/config.ini
 sudo sed -i 's/^\(clear_password =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(initial_info_text =\) null/\1 Arch Linux/' /etc/ly/config.ini
 sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
