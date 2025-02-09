@@ -118,3 +118,14 @@ sudo pacman -S spotify-launcher
 
 # install fira fonts
 sudo pacman -S nerd-fonts
+
+# enable tap to click
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo tee << 'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null
+Section "InputClass"
+  Identifier "touchpad"
+  MatchIsTouchpad "on"
+  Driver "libinput"
+  Option "Tapping" "on"
+EndSection
+EOF
