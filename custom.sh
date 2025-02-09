@@ -82,10 +82,8 @@ codium --install-extension reditorsupport.r
 
 # install aur helper
 git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+cd yay && makepkg -si
+cd .. && rm -rf yay
 
 # install vpn software
 yay -S mullvad-vpn-bin globalprotect-openconnect-git
