@@ -32,10 +32,13 @@ sudo ufw enable
 # install display server
 sudo pacman -S xorg
 
-# install color manager and download color profile
+# install color manager and color profile
 sudo pacman -S xcalib xiccd
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
+colormgr import-profile BOE_CQ_______NE135FBM_N41_01.icm
+ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
+colormgr device-add-profile xrandr-BOE $ICM
 
 # install window manager, notification daemon, and app launcher
 sudo pacman -S i3 dunst dmenu xss-lock
