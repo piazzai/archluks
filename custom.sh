@@ -6,7 +6,7 @@ sudo pacman -S fprintd git github-cli nano rsync reflector
 
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
-sudo sed -i '/^Color/a ILoveCandy' pacman.conf
+sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 
 # install and configure greeter
 sudo pacman -S ly
