@@ -112,11 +112,8 @@ sudo pacman -S gimp inkscape
 # install spotify
 sudo pacman -S spotify-launcher
 
-# install dropbox
-sudo pacman -S python-gpgme
-yay -S dropbox
-install -dm0 .dropbox-dist
-yay -S thunar-dropbox
+# install fira fonts
+sudo pacman -S ttf-fira-sans ttf-fira-code ttf-font-awesome
 
 # set bash variables
 printf '%s\n' '' '# Add variable for gh authentication' "export GPG_TTY=\$(tty)" \
