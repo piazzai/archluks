@@ -71,8 +71,8 @@ curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_
 sudo pacman -S easyeffects
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
-# install ruby, bundler, and gems
-sudo pacman -S ruby ruby-bundler
+# install ruby bundler and gems
+sudo pacman -S ruby-bundler
 gem install --user-install jekyll
 gem install --user-install neocities
 
