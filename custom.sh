@@ -43,8 +43,9 @@ colormgr device-add-profile xrandr-BOE $ICM
 # install window manager, notification daemon, and app launcher
 sudo pacman -S i3 dunst dmenu xss-lock
 
-# install audio server
-sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+# install audio server and volume controls
+sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol
+yay -S pa-applet mictray
 
 # install equalizer and download audio profile
 sudo pacman -S easyeffects
