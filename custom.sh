@@ -104,7 +104,7 @@ sudo pacman -S signal-desktop
 # install web browser and mail client
 sudo pacman -S firefox thunderbird
 
-# install graphics editors
+# install graphics software
 sudo pacman -S gimp inkscape
 
 # install spotify
