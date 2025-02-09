@@ -117,4 +117,4 @@ sudo pacman -S gimp inkscape
 sudo pacman -S spotify-launcher
 
 # install fira fonts
-sudo pacman -S ttf-fira-sans ttf-fira-code ttf-font-awesome
+sudo pacman -S nerd-fonts
