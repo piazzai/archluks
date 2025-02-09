@@ -17,16 +17,13 @@ sudo sed -i 's/^\(initial_info_text =\) null/\1 Arch Linux/' /etc/ly/config.ini
 sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 
-# enable services
-sudo pacman -S pacman-contrib tlp
+# install and enable services
+sudo pacman -S pacman-contrib tlp ufw
 sudo systemctl enable fstrim.timer
 sudo systemctl enable ly
 sudo systemctl enable NetworkManager
 sudo systemctl enable paccache.timer
 sudo systemctl enable tlp
-
-# enable firewall
-sudo pacman -S ufw gufw
 sudo ufw enable
 
 # install display server
