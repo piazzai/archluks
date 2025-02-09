@@ -29,19 +29,24 @@ sudo ufw enable
 # install display server
 sudo pacman -S xorg
 
-# install color manager and color profile
+# install color manager and download color profile
 sudo pacman -S xcalib xiccd
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
+
+# apply color profile
 colormgr import-profile BOE_CQ_______NE135FBM_N41_01.icm
 ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
 colormgr device-add-profile xrandr-BOE $ICM
 
-# install window manager, notification daemon, and app launcher
+# install window manager and dependencies
 sudo pacman -S i3 dunst dmenu xss-lock
 
-# install audio server and volume controls
-sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol
+# install audio server
+sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+
+# install volume controls
+sudo pacman -S pavucontrol
 yay -S pa-applet mictray
 
 # install equalizer and download audio profile
