@@ -117,6 +117,6 @@ sudo pacman -S ttf-fira-sans ttf-fira-code ttf-font-awesome
 
 # set bash variables
 printf '%s\n' '' '# Add variable for gh authentication' "export GPG_TTY=\$(tty)" \
-  '' '# Add variable for backup sync' "BAK=\$HOME/Backup" \
+  '' '# Add variable for backup sync' "BACKUP=\$HOME/backup" \
   '' '# Make user-installed gems executable' "export PATH=\$PATH:\$(ruby -e 'puts Gem.user_dir')/bin" \
   '' '# Include custom scripts' "export PATH=\$HOME/.bin:\$PATH" >> ~/.bashrc
