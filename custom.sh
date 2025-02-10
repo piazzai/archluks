@@ -46,15 +46,11 @@ sudo pacman -S i3 dunst dmenu xss-lock
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
 
 # install volume controls
-sudo pacman -S pavucontrol
-yay -S pa-applet mictray
+sudo pacman -S alsa-utils pavucontrol
 
 # install equalizer and download audio profile
 sudo pacman -S easyeffects
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
-
-# install network tray applet
-sudo pacman -S network-manager-applet
 
 # install terminal emulator
 sudo pacman -S alacritty
