@@ -85,6 +85,11 @@ cd .. && rm -rf yay
 
 # install vpn software
 yay -S mullvad-vpn-bin globalprotect-openconnect-git
+mullvad tunnel set wireguard --daita on
+mullvad relay set tunnel wireguard --use-multihop on
+mullvad auto-connect set on
+mullvad dns set default --block-ads --block-trackers --block-malware
+mullvad relay set location ch
 
 # initialize git lfs
 sudo pacman -S git-lfs
