@@ -109,7 +109,8 @@ yay -S cryptomator-bin
 sudo pacman -S signal-desktop
 
 # install web browser and mail client
-sudo pacman -S firefox thunderbird
+yay -s mullvad-browser-bin ungoogled-chromium-bin
+sudo pacman -S thunderbird
 
 # install graphics software
 sudo pacman -S gimp inkscape
