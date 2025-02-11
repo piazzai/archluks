@@ -101,6 +101,9 @@ sudo pacman -S viewnior
 # install media player
 sudo pacman -S vlc
 
+# install office suite
+yay -S onlyoffice-bin
+
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
