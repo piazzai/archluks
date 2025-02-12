@@ -37,7 +37,7 @@ curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_
 # apply color profile
 colormgr import-profile BOE_CQ_______NE135FBM_N41_01.icm
 ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
-colormgr device-add-profile xrandr-BOE $ICM
+colormgr device-add-profile xrandr-BOE "$ICM"
 
 # install window manager and dependencies
 sudo pacman -S i3 dunst dmenu xss-lock
