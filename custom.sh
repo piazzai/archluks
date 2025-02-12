@@ -76,7 +76,7 @@ R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
 yay -S vscodium-bin
 codium --install-extension James-Yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
-codium --install-extension reditorsupport.r
+codium --install-extension REditorSupport.r
 
 # install aur helper
 git clone https://aur.archlinux.org/yay.git
