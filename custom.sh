@@ -64,7 +64,7 @@ gem install --user-install neocities
 sudo pacman -S texlive
 
 # install r and packages
-sudo pacman -S r
+sudo pacman -S r gcc-fortran
 RLIBS="Sys.getenv('R_LIBS_USER')"
 CRAN="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
