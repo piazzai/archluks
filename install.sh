@@ -18,7 +18,7 @@ if [[ "$PROCEED" == [Yy] || "$PROCEED" == [Yy][Ee][Ss] ]]; then
     echo "Proceeding."
 else
     echo "Aborting."
-    exit 1
+    exit 0
 fi
 
 # wipe current signature
