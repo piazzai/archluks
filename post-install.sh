@@ -125,7 +125,7 @@ sudo pacman -S gimp inkscape
 # install spotify
 sudo pacman -S spotify-launcher
 
-# install fira fonts
+# install typefaces
 sudo pacman -S nerd-fonts
 
 # enable tap to click
