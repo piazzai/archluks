@@ -92,6 +92,10 @@ mullvad auto-connect set on
 mullvad dns set default --block-ads --block-trackers --block-malware
 mullvad relay set location ch
 
+# install keepass and cryptomator
+sudo pacman -S keepassxc
+yay -S cryptomator-bin
+
 # initialize git lfs
 sudo pacman -S git-lfs
 git lfs install
@@ -107,10 +111,6 @@ sudo pacman -S vlc
 
 # install office suite
 yay -S onlyoffice-bin
-
-# install keepass and cryptomator
-sudo pacman -S keepassxc
-yay -S cryptomator-bin
 
 # install signal
 sudo pacman -S signal-desktop
