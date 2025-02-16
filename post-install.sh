@@ -2,7 +2,7 @@
 set -e
 
 # install terminal utilities
-sudo pacman -S acpi feh fprintd git lf nano reflector rsync tree scrot sysstat
+sudo pacman -S acpi bash-completion feh fprintd git github-cli lf reflector rsync scrot sysstat tree vim
 
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
