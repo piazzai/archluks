@@ -40,7 +40,8 @@ ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
 colormgr device-add-profile xrandr-BOE "$ICM"
 
 # install window manager and dependencies
-sudo pacman -S i3 dunst dmenu xss-lock
+sudo pacman -S i3 dunst dmenu rofi xautolock
+
 
 # install audio server
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
