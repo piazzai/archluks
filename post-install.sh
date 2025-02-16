@@ -42,6 +42,8 @@ colormgr device-add-profile xrandr-BOE "$ICM"
 # install window manager and dependencies
 sudo pacman -S i3 dunst dmenu rofi xautolock
 
+# install compositor
+sudo pacman -S picom
 
 # install audio server
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
