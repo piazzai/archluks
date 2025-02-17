@@ -103,9 +103,6 @@ yay -S cryptomator-bin
 sudo pacman -S git-lfs
 git lfs install
 
-# install text editor
-sudo pacman -S mousepad
-
 # install image viewer
 sudo pacman -S viewnior
 
