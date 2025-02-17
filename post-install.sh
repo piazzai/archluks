@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# install aur helper
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si
+cd .. && rm -rf yay
+
 # install terminal utilities
 sudo pacman -S acpi bash-completion feh fprintd git github-cli lf reflector rsync scrot sysstat tree vim
 
@@ -25,6 +30,15 @@ sudo systemctl enable NetworkManager
 sudo systemctl enable paccache.timer
 sudo systemctl enable tlp
 sudo ufw enable
+
+# install and configure vpn
+yay -S globalprotect-openconnect-git
+yay -S mullvad-vpn-bin
+mullvad tunnel set wireguard --daita on
+mullvad relay set tunnel wireguard --use-multihop on
+mullvad auto-connect set on
+mullvad dns set default --block-ads --block-trackers --block-malware
+mullvad relay set location ch
 
 # install display server
 sudo pacman -S xorg
@@ -81,19 +95,6 @@ codium --install-extension James-Yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension REditorSupport.r
 codium --install-extension timonwong.shellcheck
-
-# install aur helper
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si
-cd .. && rm -rf yay
-
-# install vpn software
-yay -S mullvad-vpn-bin globalprotect-openconnect-git
-mullvad tunnel set wireguard --daita on
-mullvad relay set tunnel wireguard --use-multihop on
-mullvad auto-connect set on
-mullvad dns set default --block-ads --block-trackers --block-malware
-mullvad relay set location ch
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
