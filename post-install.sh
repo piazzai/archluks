@@ -7,7 +7,19 @@ cd yay && makepkg -si
 cd .. && rm -rf yay
 
 # install terminal utilities
-sudo pacman -S acpi bash-completion feh fprintd git github-cli lf reflector rsync scrot sysstat tree vim
+sudo pacman -S acpi
+sudo pacman -S bash-completion
+sudo pacman -S feh
+sudo pacman -S fprintd
+sudo pacman -S git
+sudo pacman -S github-cli
+sudo pacman -S lf
+sudo pacman -S reflector
+sudo pacman -S rsync
+sudo pacman -S scrot
+sudo pacman -S sysstat
+sudo pacman -S tree
+sudo pacman -S vim
 
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
@@ -44,8 +56,8 @@ mullvad relay set location ch
 sudo pacman -S xorg
 
 # install color manager and download color profile
-sudo pacman -S xcalib xiccd
-curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
+sudo pacman -S xcalib
+sudo pacman -S xiccd
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
 # apply color profile
@@ -54,16 +66,24 @@ ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
 colormgr device-add-profile xrandr-BOE "$ICM"
 
 # install window manager and dependencies
-sudo pacman -S i3 dunst dmenu rofi xautolock
+sudo pacman -S i3
+sudo pacman -S dunst
+sudo pacman -S dmenu
+sudo pacman -S rofi
+sudo pacman -S xautolock
 
 # install compositor
 sudo pacman -S picom
 
 # install audio server
-sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
+sudo pacman -S pipewire
+sudo pacman -S pipewire-alsa
+sudo pacman -S pipewire-pulse
+sudo pacman -S pipewire-jack
 
 # install volume controls
-sudo pacman -S alsa-utils pavucontrol
+sudo pacman -S alsa-utils
+sudo pacman -S pavucontrol
 
 # install equalizer and download audio profile
 sudo pacman -S easyeffects
@@ -81,7 +101,8 @@ gem install --user-install neocities
 sudo pacman -S texlive
 
 # install r and packages
-sudo pacman -S r gcc-fortran
+sudo pacman -S r
+sudo pacman -S gcc-fortran
 RLIBS="Sys.getenv('R_LIBS_USER')"
 CRAN="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
@@ -117,11 +138,13 @@ yay -S onlyoffice-bin
 sudo pacman -S signal-desktop
 
 # install web browsers and mail client
-yay -s mullvad-browser-bin ungoogled-chromium-bin
+yay -S mullvad-browser-bin
+yay -S ungoogled-chromium-bin
 sudo pacman -S thunderbird
 
 # install graphics software
-sudo pacman -S gimp inkscape
+sudo pacman -S gimp
+sudo pacman -S inkscape
 
 # install spotify
 sudo pacman -S spotify-launcher
