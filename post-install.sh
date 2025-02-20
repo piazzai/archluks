@@ -118,9 +118,6 @@ codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension REditorSupport.r
 codium --install-extension timonwong.shellcheck
 
-# install keyring
-sudo pacman -S gnome-keyring
-
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
