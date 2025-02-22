@@ -31,7 +31,7 @@ sudo pacman -S ly
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
 sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M:%S %Z/' /etc/ly/config.ini
 sudo sed -i 's/^\(clear_password =\) false/\1 true/' /etc/ly/config.ini
-sudo sed -i 's/^\(initial_info_text =\) null/\1 Arch Linux/' /etc/ly/config.ini
+sudo sed -i 's/^\(initial_info_text =\) null/\1 arch linux/' /etc/ly/config.ini
 sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 
@@ -111,9 +111,9 @@ R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
 
 # install vscodium and extensions
 yay -S vscodium-bin
-codium --install-extension James-Yu.latex-workshop
+codium --install-extension james-yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
-codium --install-extension REditorSupport.r
+codium --install-extension reditorsupport.r
 codium --install-extension timonwong.shellcheck
 
 # install keepass and cryptomator
