@@ -142,7 +142,7 @@ sudo pacman -S gimp
 sudo pacman -S inkscape
 
 # install spotify
-sudo pacman -S spotify-launcher
+yay -S spotify
 
 # install typefaces
 sudo pacman -S ttf-0xproto-nerd
