@@ -133,8 +133,9 @@ yay -S onlyoffice-bin
 sudo pacman -S signal-desktop
 
 # install web browsers and mail client
-sudo pacman -S firefox
-sudo pacman -S thunderbird
+sudo pacman -S claws-mail
+yay -S mullvad-browser-bin
+yay -S ungoogled-chromium-bin
 
 # install graphics software
 sudo pacman -S gimp
