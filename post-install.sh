@@ -9,7 +9,6 @@ sudo pacman -S fprintd
 sudo pacman -S git
 sudo pacman -S git-lfs
 sudo pacman -S github-cli
-sudo pacman -S lf
 sudo pacman -S reflector
 sudo pacman -S rsync
 sudo pacman -S scrot
