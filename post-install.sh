@@ -119,6 +119,10 @@ codium --install-extension timonwong.shellcheck
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
 
+# install file manager
+sudo pacman -S gvfs
+sudo pacman -S thunar
+
 # install image viewer
 sudo pacman -S viewnior
 
