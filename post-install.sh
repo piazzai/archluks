@@ -147,7 +147,7 @@ sudo pacman -S inkscape
 sudo pacman -S spotify-launcher
 
 # install typefaces
-sudo pacman -S nerd-fonts
+sudo pacman -S ttf-0xproto-nerd
 
 # enable tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
