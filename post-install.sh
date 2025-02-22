@@ -106,8 +106,6 @@ sudo pacman -S gcc-fortran
 RLIBS="Sys.getenv('R_LIBS_USER')"
 CRAN="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
-R -e "install.packages('languageserver', lib = $RLIBS, repos = $CRAN)"
-R -e "install.packages('tidyverse', lib = $RLIBS, repos = $CRAN)"
 R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
 
 # install vscodium and extensions
