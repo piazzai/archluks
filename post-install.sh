@@ -7,6 +7,7 @@ sudo pacman -S fastfetch
 sudo pacman -S feh
 sudo pacman -S fprintd
 sudo pacman -S git
+sudo pacman -S git-lfs
 sudo pacman -S github-cli
 sudo pacman -S lf
 sudo pacman -S reflector
@@ -119,10 +120,6 @@ codium --install-extension timonwong.shellcheck
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
-
-# initialize git lfs
-sudo pacman -S git-lfs
-git lfs install
 
 # install image viewer
 sudo pacman -S viewnior
