@@ -13,6 +13,7 @@ sudo pacman -S rsync
 sudo pacman -S scrot
 sudo pacman -S sysstat
 sudo pacman -S tree
+sudo pacman -S udisks2
 sudo pacman -S vim
 
 # install aur helper
