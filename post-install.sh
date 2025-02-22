@@ -44,7 +44,6 @@ sudo systemctl enable tlp
 sudo ufw enable
 
 # install and configure vpn
-yay -S globalprotect-openconnect-git
 yay -S mullvad-vpn-bin
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
