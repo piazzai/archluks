@@ -66,7 +66,6 @@ ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
 colormgr device-add-profile xrandr-BOE "$ICM"
 
 # install window manager and dependencies
-sudo pacman -S arandr
 sudo pacman -S i3
 sudo pacman -S dunst
 sudo pacman -S dmenu
