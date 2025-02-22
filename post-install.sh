@@ -3,7 +3,6 @@ set -e
 
 # install terminal utilities
 sudo pacman -S acpi
-sudo pacman -S bash-completion
 sudo pacman -S feh
 sudo pacman -S fprintd
 sudo pacman -S git
