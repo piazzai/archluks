@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-# install aur helper
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si
-cd .. && rm -rf yay
-
 # install terminal utilities
 sudo pacman -S acpi
 sudo pacman -S bash-completion
@@ -20,6 +15,11 @@ sudo pacman -S scrot
 sudo pacman -S sysstat
 sudo pacman -S tree
 sudo pacman -S vim
+
+# install aur helper
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si
+cd .. && rm -rf yay
 
 # configure pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
