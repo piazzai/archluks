@@ -144,11 +144,8 @@ sudo pacman -S thunderbird
 sudo pacman -S gimp
 sudo pacman -S inkscape
 
-# install spotify
+# install spotify client
 yay -S spotify
-
-# install typefaces
-sudo pacman -S ttf-0xproto-nerd
 
 # enable tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
