@@ -9,13 +9,13 @@ sudo pacman -S fprintd
 sudo pacman -S git
 sudo pacman -S git-lfs
 sudo pacman -S github-cli
+sudo pacman -S nvim
 sudo pacman -S reflector
 sudo pacman -S rsync
 sudo pacman -S scrot
 sudo pacman -S sysstat
 sudo pacman -S tree
 sudo pacman -S udisks2
-sudo pacman -S vim
 
 # install aur helper
 git clone https://aur.archlinux.org/yay.git
