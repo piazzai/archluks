@@ -63,7 +63,7 @@ sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
 
 # apply color profile
 ICM=$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')
-colormgr device-add-profile xrandr-BOE "$ICM"
+xiccd & colormgr device-add-profile xrandr-BOE "$ICM"
 
 # install window manager and dependencies
 sudo pacman -S i3
