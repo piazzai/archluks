@@ -67,11 +67,12 @@ curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_
 #xiccd &
 #colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')"
 
-# install window manager and dependencies
+# install window manager and X utilities
 sudo pacman -S i3
 sudo pacman -S dunst
 sudo pacman -S dmenu
 sudo pacman -S rofi
+sudo pacman -S x11-ssh-askpass
 sudo pacman -S xautolock
 
 # install compositor
