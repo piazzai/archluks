@@ -36,7 +36,9 @@ sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
 
 # install and enable services
-sudo pacman -S pacman-contrib tlp ufw
+sudo pacman -S pacman-contrib
+sudo pacman -S tlp
+sudo pacman -S ufw
 sudo systemctl enable fstrim.timer
 sudo systemctl enable ly
 sudo systemctl enable NetworkManager
