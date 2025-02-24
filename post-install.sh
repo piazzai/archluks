@@ -138,7 +138,7 @@ yay -S onlyoffice-bin
 # install signal
 sudo pacman -S signal-desktop
 
-# install web browsers and mail client
+# install web browser and mail client
 sudo pacman -S firefox
 sudo pacman -S thunderbird
 
