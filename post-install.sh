@@ -26,7 +26,7 @@ cd .. && rm -rf yay
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 
-# install and configure greeter
+# install, configure, and enable greeter
 sudo pacman -S ly
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
 sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M:%S %Z/' /etc/ly/config.ini
@@ -34,17 +34,29 @@ sudo sed -i 's/^\(clear_password =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(initial_info_text =\) null/\1 arch linux/' /etc/ly/config.ini
 sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
-
-# install and enable services
-sudo pacman -S pacman-contrib
-sudo pacman -S tlp
-sudo pacman -S ufw
-sudo systemctl enable fstrim.timer
 sudo systemctl enable ly
+
+# enable file system trimming
+sudo systemctl enable fstrim.timer
+
+# enable network manager
 sudo systemctl enable NetworkManager
+
+# install and enable pacman cache clearing
+sudo pacman -S pacman-contrib
 sudo systemctl enable paccache.timer
+
+# install and enable battery saver
+sudo pacman -S tlp
 sudo systemctl enable tlp
+
+# install and enable firewall
+sudo pacman -S ufw
 sudo ufw enable
+
+# enable openssh agent
+systemctl --user enable ssh-agent.service
+systemctl --user start ssh-agent.service
 
 # install and configure vpn
 yay -S mullvad-vpn-bin
