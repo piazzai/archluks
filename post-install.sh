@@ -149,6 +149,11 @@ sudo pacman -S inkscape
 # install spotify client
 yay -S spotify
 
+# install typefaces
+sudo pacman -S terminus-font
+sudo pacman -S ttf-nerd-fonts-symbols
+sudo pacman -S ttf-nerd-fonts-symbols-mono
+
 # enable tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo tee << 'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null
