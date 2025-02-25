@@ -162,7 +162,8 @@ sudo pacman -S inkscape
 yay -S spotify
 
 # install typefaces
-sudo pacman -S ttf-dejavu-nerd
+sudo pacman -S otf-monaspace
+sudo pacman -S otf-monaspace-nerd
 
 # enable tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
