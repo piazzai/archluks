@@ -84,7 +84,6 @@ sudo pacman -S i3
 sudo pacman -S dunst
 sudo pacman -S dmenu
 sudo pacman -S rofi
-sudo pacman -S x11-ssh-askpass
 sudo pacman -S xautolock
 
 # install compositor
