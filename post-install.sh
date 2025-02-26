@@ -138,6 +138,9 @@ yay -S cryptomator-bin
 sudo pacman -S gvfs
 sudo pacman -S thunar
 
+# install text editor
+sudo pacman -S l3afpad
+
 # install image viewer
 sudo pacman -S viewnior
 
