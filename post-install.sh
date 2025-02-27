@@ -67,23 +67,25 @@ mullvad dns set default --block-ads --block-trackers --block-malware
 mullvad relay set location ch
 
 # install display server
+sudo pacman -S xautolock
+sudo pacman -S xcalib
+sudo pacman -S xclip
+sudo pacman -S xdotool
+sudo pacman -S xiccd
 sudo pacman -S xorg
 
-# install color manager and download color profile
-sudo pacman -S xcalib
-sudo pacman -S xiccd
+# download color profile
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
 # to apply the color profile, run after reboot:
 #sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
 #colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')"
 
-# install window manager and X utilities
+# install window manager
 sudo pacman -S i3
 sudo pacman -S dunst
 sudo pacman -S dmenu
 sudo pacman -S rofi
-sudo pacman -S xautolock
 
 # install compositor
 sudo pacman -S picom
