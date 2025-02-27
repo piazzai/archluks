@@ -100,8 +100,10 @@ sudo pacman -S pipewire-jack
 sudo pacman -S alsa-utils
 sudo pacman -S pavucontrol
 
-# install equalizer and download audio profile
+# install audio equalizer
 sudo pacman -S easyeffects
+
+# download audio profile
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # install terminal emulator
