@@ -74,9 +74,8 @@ sudo pacman -S xcalib
 sudo pacman -S xiccd
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 
-# apply color profile
+# to apply the color profile, run after reboot:
 #sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
-#xiccd &
 #colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')"
 
 # install window manager and X utilities
