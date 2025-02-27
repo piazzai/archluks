@@ -9,10 +9,10 @@ sudo pacman -S fprintd
 sudo pacman -S git
 sudo pacman -S git-lfs
 sudo pacman -S github-cli
+sudo pacman -S maim
 sudo pacman -S neovim
 sudo pacman -S reflector
 sudo pacman -S rsync
-sudo pacman -S scrot
 sudo pacman -S sysstat
 sudo pacman -S tree
 sudo pacman -S udisks2
