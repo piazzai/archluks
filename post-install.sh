@@ -170,7 +170,6 @@ sudo pacman -S inkscape
 yay -S spotify
 
 # install typefaces
-sudo pacman -S ttf-input
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
