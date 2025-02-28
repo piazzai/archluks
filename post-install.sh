@@ -114,6 +114,7 @@ gem install --user-install neocities
 
 # install texlive
 sudo pacman -S texlive
+sudo pacman -S texlive-langgreek
 
 # install r and packages
 sudo pacman -S r
