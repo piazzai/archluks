@@ -108,7 +108,8 @@ curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/
 sudo pacman -S alacritty
 
 # install ruby bundler and gems
-sudo pacman -S ruby ruby-bundler
+sudo pacman -S ruby
+sudo pacman -S ruby-bundler
 gem install --user-install jekyll
 gem install --user-install neocities
 
