@@ -113,6 +113,9 @@ sudo pacman -S ruby-bundler
 gem install --user-install jekyll
 gem install --user-install neocities
 
+# install node.js
+sudo pacman -S nodejs
+
 # install texlive
 sudo pacman -S texlive
 sudo pacman -S texlive-langgreek
