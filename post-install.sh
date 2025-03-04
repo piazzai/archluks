@@ -50,13 +50,18 @@ sudo systemctl enable paccache.timer
 sudo pacman -S tlp
 sudo systemctl enable tlp
 
-# install and enable firewall
-sudo pacman -S ufw
-sudo ufw enable
+# install and enable bluetooth
+sudo pacman -S bluez
+sudo pacman -S bluez-utils
+sudo systemctl enable bluetooth.service
 
 # enable openssh agent
 systemctl --user enable ssh-agent.service
 systemctl --user start ssh-agent.service
+
+# install and enable firewall
+sudo pacman -S ufw
+sudo ufw enable
 
 # install and configure vpn
 yay -S mullvad-vpn-bin
