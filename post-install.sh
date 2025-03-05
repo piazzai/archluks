@@ -142,6 +142,9 @@ codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension reditorsupport.r
 codium --install-extension timonwong.shellcheck
 
+# install network editor
+sudo pacman -S nm-connection-editor
+
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
