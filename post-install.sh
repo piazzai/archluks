@@ -165,6 +165,9 @@ sudo pacman -S vlc
 # install character map
 sudo pacman -S gucharmap
 
+# install document scanner
+sudo pacman -S simple-scan
+
 # install office suite
 yay -S onlyoffice-bin
 
