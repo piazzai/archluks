@@ -109,6 +109,9 @@ sudo pacman -S easyeffects
 # download audio profile
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
+# install brightness manager
+sudo pacman -S brightnessctl
+
 # install terminal emulator
 sudo pacman -S alacritty
 
