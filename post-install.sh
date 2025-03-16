@@ -138,6 +138,9 @@ R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
 R -e "install.packages('languageserver', lib = $RLIBS, repos = $CRAN)"
 R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
 
+# install rstudio
+yay -S rstudio-desktop-bin
+
 # install vscodium and extensions
 yay -S vscodium-bin
 codium --install-extension james-yu.latex-workshop
