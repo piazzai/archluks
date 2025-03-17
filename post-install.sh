@@ -143,9 +143,7 @@ yay -S rstudio-desktop-bin
 
 # install vscodium and extensions
 yay -S vscodium-bin
-codium --install-extension james-yu.latex-workshop
-codium --install-extension jeanp413.open-remote-ssh
-codium --install-extension reditorsupport.r
+codium --install-extension James-Yu.latex-workshop
 codium --install-extension timonwong.shellcheck
 
 # install network editor
