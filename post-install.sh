@@ -137,6 +137,9 @@ CRAN="c(CRAN = 'https://cran.r-project.org')"
 R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
 R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
 
+# install rstudio
+yay -S rstudio-desktop-bin
+
 # install vscodium and extensions
 yay -S vscodium-bin
 codium --install-extension James-Yu.latex-workshop
