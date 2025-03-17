@@ -143,6 +143,8 @@ yay -S rstudio-desktop-bin
 # install vscodium and extensions
 yay -S vscodium-bin
 codium --install-extension James-Yu.latex-workshop
+codium --install-extension ms-python.python
+codium --install-extension REditorSupport.r
 codium --install-extension timonwong.shellcheck
 
 # install network editor
