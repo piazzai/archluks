@@ -162,6 +162,9 @@ sudo pacman -S xarchiver
 # install text editor
 sudo pacman -S l3afpad
 
+# install pdf viewer
+sudo pacman -S mupdf
+
 # install image viewer
 sudo pacman -S viewnior
 
