@@ -94,6 +94,9 @@ sudo pacman -S rofi
 # install compositor
 sudo pacman -S picom
 
+# install system monitor
+sudo pacman -S resources
+
 # install audio server
 sudo pacman -S pipewire
 sudo pacman -S pipewire-alsa
