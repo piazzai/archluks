@@ -175,7 +175,7 @@ sudo pacman -S gucharmap
 sudo pacman -S simple-scan
 
 # install office suite
-yay -S onlyoffice-bin
+sudo pacman -S libreoffice-fresh
 
 # install signal
 sudo pacman -S signal-desktop
