@@ -136,10 +136,8 @@ sudo pacman -S texlive-langgreek
 # install r and packages
 sudo pacman -S r
 sudo pacman -S gcc-fortran
-RLIBS="Sys.getenv('R_LIBS_USER')"
-CRAN="c(CRAN = 'https://cran.r-project.org')"
-R -e "dir.create(path = $RLIBS, showWarnings = FALSE, recursive = TRUE)"
-R -e "install.packages('renv', lib = $RLIBS, repos = $CRAN)"
+R -e "dir.create(path = Sys.getenv('R_LIBS_USER'), showWarnings = FALSE, recursive = TRUE)"
+R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
 # install vscodium and extensions
 yay -S vscodium-bin
