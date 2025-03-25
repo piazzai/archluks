@@ -133,6 +133,9 @@ sudo pacman -S npm
 sudo pacman -S texlive
 sudo pacman -S texlive-langgreek
 
+# install conda
+yay -S miniconda3
+
 # install r and packages
 sudo pacman -S r
 sudo pacman -S gcc-fortran
