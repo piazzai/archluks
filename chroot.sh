@@ -6,8 +6,8 @@ read -rp 'What was the target device again? (default: /dev/nvme0n1) ' DEVICE
 DEVICE=${DEVICE:-'/dev/nvme0n1'}
 read -rp "What was your CPU make again? (default: 'intel') " CPU
 CPU=${CPU:-'intel'}
-read -rp 'What is your timezone? (default: UTC) ' TIMEZONE
-TIMEZONE=${TIMEZONE:-'UTC'}
+read -rp 'What is your timezone? (default: Europe/London) ' TIMEZONE
+TIMEZONE=${TIMEZONE:-'Europe/London'}
 read -rp 'What is your locale? (default: en_US) ' LOCALE
 LOCALE=${LOCALE:-'en_US'}
 read -rp 'What should be the hostname? (default: arch) ' HOSTNAME
