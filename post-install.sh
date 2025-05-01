@@ -63,6 +63,10 @@ systemctl --user start ssh-agent.service
 sudo pacman -S ufw
 sudo ufw enable
 
+# install and update antivirus
+sudo pacman -S clamav
+sudo freshclam
+
 # install and configure vpn
 yay -S mullvad-vpn-bin
 mullvad auto-connect set on
