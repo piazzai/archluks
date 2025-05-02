@@ -76,7 +76,6 @@ mullvad dns set default --block-ads --block-trackers --block-malware
 mullvad relay set location ch
 
 # install display server
-sudo pacman -S xautolock
 sudo pacman -S xcalib
 sudo pacman -S xclip
 sudo pacman -S xdotool
