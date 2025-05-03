@@ -204,6 +204,7 @@ yay -S spotify
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
+sudo pacman -S ttf-liberation
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
