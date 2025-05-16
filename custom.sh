@@ -190,8 +190,7 @@ sudo pacman -S libreoffice-fresh
 # install signal
 sudo pacman -S signal-desktop
 
-# install web browsers and mail client
-yay -S ungoogled-chromium-bin
+# install web browser and mail client
 sudo pacman -S firefox
 sudo pacman -S thunderbird
 
