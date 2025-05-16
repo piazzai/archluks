@@ -148,9 +148,10 @@ R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN =
 
 # install vscodium and extensions
 yay -S vscodium-bin
-codium --install-extension James-Yu.latex-workshop
+codium --install-extension james-yu.latex-workshop
 codium --install-extension ms-python.python
-codium --install-extension REditorSupport.r
+codium --install-extension ms-python.debugpy
+codium --install-extension reditorsupport.r
 codium --install-extension timonwong.shellcheck
 
 # install network editor
