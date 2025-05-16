@@ -68,7 +68,7 @@ sudo pacman -S clamav
 sudo freshclam
 
 # install and configure vpn
-yay -S mullvad-vpn-bin
+yay -S mullvad-vpn-cli
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
 mullvad relay set tunnel wireguard --use-multihop on
