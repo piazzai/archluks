@@ -68,7 +68,7 @@ sudo pacman -S clamav
 sudo freshclam
 
 # install and configure vpn
-yay -S mullvad-vpn-cli
+yay -S mullvad-vpn-bin
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
 mullvad relay set tunnel wireguard --use-multihop on
@@ -160,7 +160,7 @@ sudo pacman -S nm-connection-editor
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
-yay -S cryptomator
+yay -S cryptomator-bin
 yay -S keepassxc-cryptomator
 
 # install file manager
