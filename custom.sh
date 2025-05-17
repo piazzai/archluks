@@ -10,7 +10,7 @@ sudo pacman -S git
 sudo pacman -S git-lfs
 sudo pacman -S github-cli
 sudo pacman -S maim
-sudo pacman -S neovim
+sudo pacman -S nano
 sudo pacman -S reflector
 sudo pacman -S rsync
 sudo pacman -S sysstat
