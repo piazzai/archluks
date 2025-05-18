@@ -160,7 +160,6 @@ sudo pacman -S nm-connection-editor
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
-yay -S keepassxc-cryptomator
 
 # install file manager
 sudo pacman -S gvfs
