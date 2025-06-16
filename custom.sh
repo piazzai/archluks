@@ -148,6 +148,8 @@ R -e "install.packages('languageserver', lib = Sys.getenv('R_LIBS_USER'), repos 
 R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
 # install vscodium and extensions
+sudo pacman -S perl-yaml-tiny
+sudo pacman -S perl-file-homedir
 yay -S vscodium-bin
 codium --install-extension James-Yu.latex-workshop
 codium --install-extension ms-python.python
