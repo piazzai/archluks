@@ -201,6 +201,10 @@ sudo pacman -S gimp
 sudo pacman -S inkscape
 sudo pacman -S imagemagick
 
+# install dropbox
+yay -S dropbox
+yay -S dropbox-cli
+
 # install spotify client
 yay -S spotify
 
