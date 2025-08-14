@@ -161,6 +161,9 @@ codium --install-extension timonwong.shellcheck
 # install network editor
 sudo pacman -S nm-connection-editor
 
+# install disk manager
+sudo pacman -S gnome-disk-utility
+
 # install keepass and cryptomator
 sudo pacman -S keepassxc
 yay -S cryptomator-bin
