@@ -161,9 +161,6 @@ codium --install-extension timonwong.shellcheck
 # install network editor
 sudo pacman -S nm-connection-editor
 
-# install logitech device manager
-sudo pacman -S solaar
-
 # install disk manager
 sudo pacman -S gnome-disk-utility
 
