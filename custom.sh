@@ -187,6 +187,7 @@ sudo pacman -S viewnior
 
 # install media player
 sudo pacman -S vlc
+sudo pacman -S vlc-plugins-all
 
 # install character map
 sudo pacman -S gucharmap
