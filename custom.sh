@@ -128,8 +128,6 @@ sudo pacman -S alacritty
 sudo pacman -S ruby
 sudo pacman -S ruby-bundler
 gem install --user-install jekyll
-gem install --user-install neocities
-gem install --user-install mutex_m
 
 # install npm
 sudo pacman -S nodejs
