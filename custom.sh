@@ -168,6 +168,7 @@ yay -S cryptomator-bin
 
 # install file manager
 sudo pacman -S gvfs
+sudo pacman -S spf
 sudo pacman -S thunar
 sudo pacman -S xarchiver
 
