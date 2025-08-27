@@ -161,6 +161,7 @@ code --install-extension James-Yu.latex-workshop
 code --install-extension ms-python.python
 code --install-extension REditorSupport.r
 code --install-extension timonwong.shellcheck
+code --install-extension yzhang.markdown-all-in-one
 
 # install network editor
 sudo pacman -S nm-connection-editor
