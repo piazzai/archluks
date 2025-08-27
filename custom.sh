@@ -155,14 +155,12 @@ R -e "dir.create(path = Sys.getenv('R_LIBS_USER'), showWarnings = FALSE, recursi
 R -e "install.packages('languageserver', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
-# install vscodium and extensions
-sudo pacman -S perl-yaml-tiny
-sudo pacman -S perl-file-homedir
-yay -S vscodium-bin
-codium --install-extension James-Yu.latex-workshop
-codium --install-extension ms-python.python
-codium --install-extension REditorSupport.r
-codium --install-extension timonwong.shellcheck
+# install code-oss and extensions
+sudo pacman -S code
+code --install-extension James-Yu.latex-workshop
+code --install-extension ms-python.python
+code --install-extension REditorSupport.r
+code --install-extension timonwong.shellcheck
 
 # install network editor
 sudo pacman -S nm-connection-editor
