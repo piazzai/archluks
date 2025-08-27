@@ -13,12 +13,20 @@ LOCALE=${LOCALE:-'en_US'}
 read -rp 'What should be the hostname? (default: arch) ' HOSTNAME
 HOSTNAME=${HOSTNAME:-'arch'}
 read -rp 'What should be the username? ' USERNAME
-if [ "$USERNAME" == '' ]; then echo 'Username required. Aborting.' && exit 1 ; fi
+if [ "$USERNAME" == '' ]; then
+  echo 'Username required. Aborting.'
+  exit 1
+fi
 read -rsp 'Set a user password... ' PASSWORD
-if [ "$PASSWORD" == '' ]; then echo 'Password required. Aborting.' && exit 1 ; fi
-read -rsp '\nRepeat the password... ' CHECK
+if [ "$PASSWORD" == '' ]; then
+  printf '\n%s\n' 'Password required. Aborting.'
+  exit 1
+else
+  printf '\n'
+fi
+read -rsp 'Repeat the password... ' CHECK
 if [ "$CHECK" != "$PASSWORD" ]; then
-  echo 'Passwords do not match. Aborting.'
+  printf '\n%s\n' 'Passwords do not match. Aborting.'
   exit 1
 else
   printf '\n'
