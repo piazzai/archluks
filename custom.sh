@@ -11,6 +11,7 @@ sudo pacman -S git-lfs
 sudo pacman -S github-cli
 sudo pacman -S maim
 sudo pacman -S nano
+sudo pacman -S openssh
 sudo pacman -S reflector
 sudo pacman -S rsync
 sudo pacman -S sysstat
