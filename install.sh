@@ -55,7 +55,6 @@ mount "${DEVICE}p1" /mnt/boot
 swapon /dev/mapper/vg-swap
 
 # bootstrap arch installation
-reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
 pacstrap -K /mnt base base-devel "$CPU-ucode" linux linux-firmware lvm2 networkmanager sudo
 
 # generate fstab
