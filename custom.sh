@@ -178,9 +178,6 @@ sudo pacman -S gvfs
 sudo pacman -S thunar
 sudo pacman -S xarchiver
 
-# install text editor
-sudo pacman -S l3afpad
-
 # install pdf viewer
 sudo pacman -S mupdf-gl
 
