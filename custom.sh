@@ -142,6 +142,9 @@ sudo pacman -S npm
 sudo pacman -S texlive
 sudo pacman -S texlive-langgreek
 
+# install pandoc
+sudo pacman -S pandoc
+
 # install conda
 yay -S miniconda3
 
