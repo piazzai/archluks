@@ -37,9 +37,9 @@ sed -i 's/^\(HOOKS.*\)block\(.*\)/\1block encrypt lvm2\2/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # set clocks
-timedatectl set-ntp true
-timedatectl set-timezone "$TIMEZONE"
 hwclock --systohc
+timedatectl set-timezone "$TIMEZONE"
+timedatectl set-ntp true
 
 # generate locale
 sed -i "s/^#\($LOCALE.UTF-8\)/\1/" /etc/locale.gen
