@@ -69,9 +69,12 @@ systemctl --user start ssh-agent.service
 sudo pacman -S ufw
 sudo ufw enable
 
-# install and update antivirus
+# install antivirus and enable updating
 sudo pacman -S clamav
 sudo freshclam
+sudo touch /var/log/clamav/freshclam.log
+sudo chown clamav:clamav /var/log/clamav/freshclam.log
+sudo systemctl enable clamav-freshclam
 
 # install and configure vpn
 yay -S mullvad-vpn-bin
