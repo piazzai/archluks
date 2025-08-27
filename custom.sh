@@ -27,6 +27,9 @@ cd .. && rm -rf yay
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 
+# enable pacman mirror optimization
+sudo systemctl enable reflector.timer
+
 # install, configure, and enable greeter
 sudo pacman -S ly
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
