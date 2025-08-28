@@ -59,6 +59,7 @@ sudo systemctl enable tlp
 # install and enable bluetooth
 sudo pacman -S bluez
 sudo pacman -S bluez-utils
+sudo pacman -S bluetui
 sudo systemctl enable bluetooth.service
 
 # enable openssh agent
