@@ -171,7 +171,7 @@ sudo pacman -S gparted
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
-yay -S cryptomator
+yay -S cryptomator-cli
 
 # install file manager
 sudo pacman -S gvfs
