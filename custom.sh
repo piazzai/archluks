@@ -167,7 +167,7 @@ codium --install-extension yzhang.markdown-all-in-one
 sudo pacman -S nm-connection-editor
 
 # install disk manager
-sudo pacman -S gnome-disk-utility
+sudo pacman -S gparted
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
