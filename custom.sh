@@ -155,13 +155,13 @@ R -e "dir.create(path = Sys.getenv('R_LIBS_USER'), showWarnings = FALSE, recursi
 R -e "install.packages('languageserver', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
-# install code-oss and extensions
-sudo pacman -S code
-code --install-extension James-Yu.latex-workshop
-code --install-extension ms-python.python
-code --install-extension REditorSupport.r
-code --install-extension timonwong.shellcheck
-code --install-extension yzhang.markdown-all-in-one
+# install vscodium and extensions
+yay -S vscodium-bin
+codium --install-extension James-Yu.latex-workshop
+codium --install-extension ms-python.python
+codium --install-extension REditorSupport.r
+codium --install-extension timonwong.shellcheck
+codium --install-extension yzhang.markdown-all-in-one
 
 # install network editor
 sudo pacman -S nm-connection-editor
