@@ -201,9 +201,9 @@ sudo pacman -S libreoffice-fresh
 sudo pacman -S signal-desktop
 
 # install browsers and mail client
-sudo pacman -S chromium
 sudo pacman -S firefox
 sudo pacman -S thunderbird
+yay -S ungoogled-chromium-bin
 
 # install graphics software
 sudo pacman -S gimp
