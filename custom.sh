@@ -170,6 +170,14 @@ sudo pacman -S nm-connection-editor
 # install disk manager
 sudo pacman -S gnome-disk-utility
 
+# install printer software
+sudo pacman -S cups
+sudo pacman -s hplip
+sudo pacman -S system-config-printer
+
+# configure printer
+sudo hp-setup -i
+
 # install text editor
 sudo pacman -S mousepad
 
