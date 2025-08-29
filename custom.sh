@@ -205,9 +205,10 @@ sudo pacman -S libreoffice-fresh
 sudo pacman -S signal-desktop
 
 # install browsers and mail client
-sudo pacman -S firefox
-sudo pacman -S thunderbird
+gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
+sudo pacman -S thunderbird
 
 # install graphics software
 sudo pacman -S gimp
