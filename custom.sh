@@ -59,7 +59,6 @@ sudo systemctl enable tlp
 # install and enable bluetooth
 sudo pacman -S bluez
 sudo pacman -S bluez-utils
-sudo pacman -S bluetui
 sudo systemctl enable bluetooth.service
 
 # enable openssh agent
@@ -81,6 +80,7 @@ sudo systemctl enable clamav-freshclam
 yay -S mullvad-vpn-cli
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
+mullvad relay set ownership owned
 mullvad relay set tunnel wireguard --use-multihop on
 mullvad dns set default --block-ads --block-trackers --block-malware
 mullvad relay set location ch
@@ -169,6 +169,9 @@ sudo pacman -S nm-connection-editor
 
 # install disk manager
 sudo pacman -S gnome-disk-utility
+
+# install bluetooth manager
+sudo pacman -S blueman
 
 # install printer software
 sudo pacman -S cups
