@@ -251,6 +251,16 @@ Section "InputClass"
 EndSection
 EOF
 
+# enable usevia.app configuration of peripherals
+sudo tee << 'EOF' /etc/udev/rules.d/99-keychron.rules > /dev/null
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="01e0", MODE="0660", GROUP="wheel", TAG+="uaccess", TAG+="udev-acl"
+EOF
+sudo tee << 'EOF' /etc/udev/rules.d/99-ploopy.rules > /dev/null
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="5043", ATTRS{idProduct}=="5c47", MODE="0660", GROUP="wheel", TAG+="uaccess", TAG+="udev-acl"
+EOF
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
 # after rebooting and restoring home
 
 sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
