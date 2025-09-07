@@ -11,6 +11,7 @@ sudo pacman -S git-lfs
 sudo pacman -S github-cli
 sudo pacman -S maim
 sudo pacman -S nano
+sudo pacman -S net-tools
 sudo pacman -S openssh
 sudo pacman -S reflector
 sudo pacman -S rsync
@@ -139,9 +140,11 @@ gem install --user-install jekyll
 sudo pacman -S nodejs
 sudo pacman -S npm
 
-# install texlive
+# install texlive and dependencies
 sudo pacman -S texlive
 sudo pacman -S texlive-langgreek
+sudo pacman -S perl-yaml-tiny
+sudo pacman -S perl-file-homedir
 
 # install pandoc
 yay -S pandoc-bin
