@@ -78,7 +78,7 @@ sudo chown clamav:clamav /var/log/clamav/freshclam.log
 sudo systemctl enable clamav-freshclam
 
 # install and configure vpn
-yay -S mullvad-vpn-cli
+yay -S mullvad-vpn-bin
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
 mullvad relay set ownership owned
