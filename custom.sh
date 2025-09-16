@@ -149,6 +149,11 @@ sudo pacman -S perl-file-homedir
 # install pandoc
 yay -S pandoc-bin
 
+# install docker, enable service, and add user to docker group
+sudo pacman -S docker docker-compose
+sudo systemctl enable docker
+sudo usermod -aG docker "$USER"
+
 # install conda
 yay -S miniconda3
 
