@@ -149,6 +149,9 @@ sudo pacman -S perl-file-homedir
 # install pandoc
 yay -S pandoc-bin
 
+# install dbeaver
+sudo pacman -S dbeaver
+
 # install docker, enable service, and add user to docker group
 sudo pacman -S docker docker-compose
 sudo systemctl enable docker
