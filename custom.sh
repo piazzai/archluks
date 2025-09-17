@@ -107,7 +107,7 @@ sudo pacman -S rofi
 sudo pacman -S picom
 
 # install system monitor
-sudo pacman -S btop
+sudo pacman -S bottom
 
 # install audio server
 sudo pacman -S pipewire
