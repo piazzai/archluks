@@ -152,13 +152,13 @@ yay -S pandoc-bin
 # install dbeaver
 sudo pacman -S dbeaver
 
+# install uv
+sudo pacman -S uv
+
 # install docker, enable service, and add user to docker group
 sudo pacman -S docker docker-compose
 sudo systemctl enable docker
 sudo usermod -aG docker "$USER"
-
-# install conda
-yay -S miniconda3
 
 # install r and packages
 sudo pacman -S r
