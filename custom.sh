@@ -230,7 +230,10 @@ sudo pacman -S signal-desktop
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
-sudo pacman -S thunderbird
+sudo pacman -S gnome-keyring
+sudo pacman -S libsecret
+sudo pacman -S evolution
+sudo pacman -S evolution-ews
 
 # install graphics software
 sudo pacman -S gimp
