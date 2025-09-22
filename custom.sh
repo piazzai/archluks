@@ -181,6 +181,11 @@ sudo pacman -S nm-connection-editor
 # install disk manager
 sudo pacman -S gnome-disk-utility
 
+# install keyring
+sudo pacman -S gnome-keyring
+sudo pacman -S libsecret
+sudo pacman -S seahorse
+
 # install bluetooth manager
 sudo pacman -S blueman
 
@@ -230,8 +235,6 @@ sudo pacman -S signal-desktop
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
-sudo pacman -S gnome-keyring
-sudo pacman -S libsecret
 sudo pacman -S evolution
 sudo pacman -S evolution-ews
 
