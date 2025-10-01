@@ -199,6 +199,8 @@ sudo hp-setup -i
 
 # install text editor
 sudo pacman -S mousepad
+gsettings set org.xfce.mousepad.preferences.view font-name 'Fira Mono 10'
+gsettings set org.xfce.mousepad.preferences.view auto-indent true
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
