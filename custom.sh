@@ -254,9 +254,10 @@ sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S noto-fonts-extra
-sudo pacman -S ttf-fira-code
-sudo pacman -S ttf-fira-mono
+sudo pacman -S ttf-cascadia-code
 sudo pacman -S ttf-fira-sans
+sudo pacman -S ttf-fira-mono
+sudo pacman -S ttf-fira-code
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
