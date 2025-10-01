@@ -198,7 +198,7 @@ sudo pacman -S system-config-printer
 sudo hp-setup -i
 
 # install text editor
-sudo pacman -S lite-xl
+sudo pacman -S mousepad
 
 # install keepass and cryptomator
 sudo pacman -S keepassxc
