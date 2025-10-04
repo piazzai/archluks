@@ -199,7 +199,7 @@ sudo hp-setup -i
 
 # install text editor
 sudo pacman -S mousepad
-gsettings set org.xfce.mousepad.preferences.view font-name 'Adwaita Mono 10'
+gsettings set org.xfce.mousepad.preferences.view font-name 'Monaspace Radon 10'
 gsettings set org.xfce.mousepad.preferences.view auto-indent true
 
 # install keepass and cryptomator
@@ -256,6 +256,7 @@ sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S noto-fonts-extra
+sudo pacman -S otf-monaspace
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
