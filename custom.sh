@@ -10,7 +10,7 @@ sudo pacman -S git
 sudo pacman -S git-lfs
 sudo pacman -S github-cli
 sudo pacman -S maim
-sudo pacman -S nvim
+sudo pacman -S nano
 sudo pacman -S net-tools
 sudo pacman -S openssh
 sudo pacman -S reflector
