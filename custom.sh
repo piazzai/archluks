@@ -187,7 +187,7 @@ sudo pacman -S libsecret
 sudo pacman -S seahorse
 
 # install bluetooth manager
-sudo pacman -S blueman
+sudo pacman -S bluetui
 
 # install printer software
 sudo pacman -S cups
