@@ -252,11 +252,12 @@ yay -S dropbox
 yay -S spotify
 
 # install typefaces
+sudo pacman -S inter-font
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S noto-fonts-extra
-sudo pacman -S otf-monaspace
+sudo pacman -S ttf-hack
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
