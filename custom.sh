@@ -131,9 +131,10 @@ sudo pacman -S brightnessctl
 # install terminal emulator
 sudo pacman -S alacritty
 
-# install ruby bundler and gems
+# install ruby and gems
 sudo pacman -S ruby
 sudo pacman -S ruby-bundler
+sudo pacman -S ruby-erb
 gem install --user-install jekyll
 
 # install npm
