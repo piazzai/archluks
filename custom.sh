@@ -57,7 +57,8 @@ sudo systemctl enable paccache.timer
 sudo pacman -S tlp
 sudo systemctl enable tlp
 
-# install and enable bluetooth
+# bluetooth
+sudo pacman -S blueman
 sudo pacman -S bluez
 sudo pacman -S bluez-utils
 sudo systemctl enable bluetooth.service
@@ -188,8 +189,8 @@ sudo pacman -S gnome-keyring
 sudo pacman -S libsecret
 sudo pacman -S seahorse
 
-# install bluetooth manager
-sudo pacman -S blueman
+# install monitor configurator
+sudo pacman -S arandr
 
 # install printer software
 sudo pacman -S cups
