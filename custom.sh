@@ -280,7 +280,6 @@ EOF
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-# after rebooting and restoring home
-
-sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
-colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')"
+# post-reboot
+# sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
+# colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A 1 BOE | grep ID | sed 's/^.*icc/icc/')"
