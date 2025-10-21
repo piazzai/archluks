@@ -1,37 +1,53 @@
 #!/bin/bash
 set -e
 
-# install terminal utilities
-sudo pacman -S acpi
-sudo pacman -S fastfetch
-sudo pacman -S feh
-sudo pacman -S fprintd
-sudo pacman -S git
-sudo pacman -S git-lfs
-sudo pacman -S github-cli
-sudo pacman -S maim
-sudo pacman -S micro
-sudo pacman -S net-tools
-sudo pacman -S openssh
-sudo pacman -S reflector
-sudo pacman -S rsync
-sudo pacman -S sysstat
-sudo pacman -S tree
-sudo pacman -S udisks2
+# firewall
+sudo pacman -S ufw
+sudo ufw enable
 
-# install aur helper
+# aur helper
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
 
-# configure pacman
+# vpn
+yay -S mullvad-vpn-bin
+mullvad auto-connect set on
+mullvad tunnel set wireguard --daita on
+mullvad relay set ownership owned
+mullvad relay set tunnel wireguard --use-multihop on
+mullvad dns set default --block-ads --block-trackers --block-malware
+mullvad relay set location ch
+
+# pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
-
-# enable pacman mirror optimization
+sudo pacman -S reflector
 sudo systemctl enable reflector.timer
+sudo pacman -S pacman-contrib
+sudo systemctl enable paccache.timer
 
-# install, configure, and enable greeter
+# hardware information
+sudo pacman -S acpi
+sudo pacman -S fastfetch
+sudo pacman -S sysstat
+
+# fingerprint reader
+sudo pacman -S fprintd
+
+# git utilities
+sudo pacman -S git
+sudo pacman -S git-lfs
+sudo pacman -S github-cli
+
+# screenshot utility
+sudo pacman -S maim
+
+# text editor
+sudo pacman -S micro
+sudo pacman -S mousepad
+
+# greeter
 sudo pacman -S ly
 sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
 sudo sed -i 's/^\(brightness_down_key =\) F5/\1 null/' /etc/ly/config.ini
@@ -43,17 +59,13 @@ sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
 sudo sed -i 's/^\(initial_info_text =\) null/\1 arch linux/' /etc/ly/config.ini
 sudo systemctl enable ly
 
-# enable file system trimming
+# file system trimming
 sudo systemctl enable fstrim.timer
 
-# enable network manager
+# network manager
 sudo systemctl enable NetworkManager
 
-# install and enable pacman cache clearing
-sudo pacman -S pacman-contrib
-sudo systemctl enable paccache.timer
-
-# install and enable battery saver
+# battery saver
 sudo pacman -S tlp
 sudo systemctl enable tlp
 
@@ -63,113 +75,101 @@ sudo pacman -S bluez
 sudo pacman -S bluez-utils
 sudo systemctl enable bluetooth.service
 
-# enable openssh agent
+# openssh agent
+sudo pacman -S openssh
 systemctl --user enable ssh-agent.service
 systemctl --user start ssh-agent.service
 
-# install and enable firewall
-sudo pacman -S ufw
-sudo ufw enable
-
-# install antivirus and enable updating
+# antivirus
 sudo pacman -S clamav
 sudo freshclam
 sudo touch /var/log/clamav/freshclam.log
 sudo chown clamav:clamav /var/log/clamav/freshclam.log
 sudo systemctl enable clamav-freshclam
 
-# install and configure vpn
-yay -S mullvad-vpn-bin
-mullvad auto-connect set on
-mullvad tunnel set wireguard --daita on
-mullvad relay set ownership owned
-mullvad relay set tunnel wireguard --use-multihop on
-mullvad dns set default --block-ads --block-trackers --block-malware
-mullvad relay set location ch
-
-# install display server
+# display server
 sudo pacman -S xcalib
 sudo pacman -S xclip
 sudo pacman -S xdotool
 sudo pacman -S xiccd
 sudo pacman -S xorg
 
-# download color profile
-curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
-  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
-
-# install window manager
+# window manager
 sudo pacman -S i3
 sudo pacman -S dunst
 sudo pacman -S dmenu
 sudo pacman -S rofi
 
-# install compositor
+# compositor
 sudo pacman -S picom
 
-# install system monitor
+# system monitor
 sudo pacman -S bottom
+sudo pacman -S resources
 
-# install audio server
+# audio server
 sudo pacman -S pipewire
 sudo pacman -S pipewire-alsa
 sudo pacman -S pipewire-pulse
 sudo pacman -S pipewire-jack
 
-# install volume controls
+# volume controls
 sudo pacman -S alsa-utils
 sudo pacman -S pavucontrol
 
-# install audio equalizer
+# audio equalizer
 sudo pacman -S easyeffects
 
-# download audio profile
+# color and audio profiles
+curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
 curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
-# install brightness manager
+# brightness manager
 sudo pacman -S brightnessctl
 
-# install terminal emulator
+# terminal emulator
 sudo pacman -S alacritty
 
-# install ruby and gems
+# ruby and gems
 sudo pacman -S ruby
 sudo pacman -S ruby-bundler
 sudo pacman -S ruby-erb
 gem install --user-install jekyll
 
-# install npm
+# npm
 sudo pacman -S nodejs
 sudo pacman -S npm
 
-# install texlive and dependencies
+# tex
 sudo pacman -S texlive
 sudo pacman -S texlive-langgreek
 sudo pacman -S perl-yaml-tiny
 sudo pacman -S perl-file-homedir
 
-# install pandoc
-yay -S pandoc-bin
+# pandoc
+sudo pacman -S pandoc
 
-# install dbeaver
+# dbeaver
 sudo pacman -S dbeaver
 
-# install uv
+# uv
 sudo pacman -S uv
 
-# install docker, enable service, and add user to docker group
-sudo pacman -S docker docker-compose
+# docker
+sudo pacman -S docker
+sudo pacman -S docker-compose
 sudo systemctl enable docker
 sudo usermod -aG docker "$USER"
 
-# install r and packages
+# r
 sudo pacman -S r
 sudo pacman -S gcc-fortran
 R -e "dir.create(path = Sys.getenv('R_LIBS_USER'), showWarnings = FALSE, recursive = TRUE)"
 R -e "install.packages('languageserver', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
-# install vscodium and extensions
+# vscodium
 yay -S vscodium-bin
 codium --install-extension foam.foam-vscode
 codium --install-extension James-Yu.latex-workshop
@@ -178,88 +178,90 @@ codium --install-extension REditorSupport.r
 codium --install-extension timonwong.shellcheck
 codium --install-extension yzhang.markdown-all-in-one
 
-# install network editor
+# network tools
+sudo pacman -S net-tools
 sudo pacman -S nm-connection-editor
 
-# install disk manager
+# disk managers
+sudo pacman -S udisks2
 sudo pacman -S gnome-disk-utility
 
-# install keyring
+# keyring
 sudo pacman -S gnome-keyring
 sudo pacman -S libsecret
 sudo pacman -S seahorse
 
-# install monitor configurator
+# monitor manager
 sudo pacman -S arandr
 
-# install printer software
+# printer
 sudo pacman -S cups
 sudo pacman -s hplip
 sudo pacman -S system-config-printer
-
-# configure printer
 sudo hp-setup -i
 
-# install text editor
-sudo pacman -S mousepad
-
-# install keepass and cryptomator
+# password manager
 sudo pacman -S keepassxc
+
+# cryptomator
 yay -S cryptomator-cli
 
-# install file manager
+# file management
 sudo pacman -S gvfs
+sudo pacman -S rsync
 sudo pacman -S thunar
+sudo pacman -S tree
 sudo pacman -S xarchiver
 
-# install pdf viewer
+# pdf viewer
 sudo pacman -S mupdf-gl
 
-# install image viewer
+# image viewers
+sudo pacman -S feh
 sudo pacman -S viewnior
 
-# install media player
+# media player
 sudo pacman -S vlc
 sudo pacman -S vlc-plugins-ffmpeg
 
-# install character map
+# character map
 sudo pacman -S gucharmap
 
-# install document scanner
+# scanner
 sudo pacman -S simple-scan
 
-# install office suite
+# office suite
 sudo pacman -S libreoffice-fresh
 
-# install signal
+# signal
 sudo pacman -S signal-desktop
 
-# install browsers and mail client
+# browsers and mail
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
 sudo pacman -S evolution
 sudo pacman -S evolution-ews
 
-# install graphics software
+# graphics
 sudo pacman -S gimp
 sudo pacman -S inkscape
 sudo pacman -S imagemagick
 
-# install dropbox
+# dropbox
 yay -S dropbox
 
-# install spotify client
+# spotify
 yay -S spotify
 
-# install typefaces
+# typefaces
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
-# enable tap to click
+# tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo tee << 'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null
 Section "InputClass"
@@ -270,7 +272,7 @@ Section "InputClass"
 EndSection
 EOF
 
-# enable usevia.app configuration of peripherals
+# usevia.app configuration
 sudo tee << 'EOF' /etc/udev/rules.d/99-keychron.rules > /dev/null
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="01e0", MODE="0660", GROUP="wheel", TAG+="uaccess", TAG+="udev-acl"
 EOF
