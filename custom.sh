@@ -255,6 +255,10 @@ yay -S dropbox
 yay -S spotify
 
 # typefaces
+sudo pacman -S ttc-iosevka
+sudo pacman -S ttc-iosevka-slab
+sudo pacman -S ttc-iosevka-aile
+sudo pacman -S ttc-iosevka-etoile
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
