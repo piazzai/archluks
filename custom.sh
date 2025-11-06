@@ -18,6 +18,7 @@ mullvad relay set ownership owned
 mullvad relay set tunnel wireguard --use-multihop on
 mullvad dns set default --block-ads --block-trackers --block-malware
 mullvad relay set location ch
+mullvad lan set allow
 
 # pacman
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
