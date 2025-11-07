@@ -256,6 +256,7 @@ yay -S dropbox
 yay -S spotify
 
 # typefaces
+yay -S adobe-base-14-fonts
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
