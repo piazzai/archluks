@@ -239,10 +239,10 @@ sudo pacman -S signal-desktop
 
 # browsers and mail
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+yay -S davmail
 yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
-sudo pacman -S evolution
-sudo pacman -S evolution-ews
+sudo pacman -S thunderbird
 
 # graphics
 sudo pacman -S gimp
