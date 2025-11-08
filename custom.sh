@@ -210,8 +210,8 @@ yay -S cryptomator-cli
 
 # file management
 sudo pacman -S gvfs
+sudo pacman -S pcmanfm
 sudo pacman -S rsync
-sudo pacman -S thunar
 sudo pacman -S tree
 sudo pacman -S xarchiver
 
