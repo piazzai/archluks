@@ -201,8 +201,9 @@ sudo pacman -s hplip
 sudo pacman -S system-config-printer
 sudo hp-setup -i
 
-# password manager
+# password managers
 sudo pacman -S keepassxc
+sudo pacman -S pass
 
 # cryptomator
 yay -S cryptomator-cli
