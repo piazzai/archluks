@@ -71,7 +71,7 @@ sudo pacman -S tlp
 sudo systemctl enable tlp
 
 # bluetooth
-sudo pacman -S bluetui
+sudo pacman -S blueman
 sudo pacman -S bluez
 sudo pacman -S bluez-utils
 sudo systemctl enable bluetooth.service
