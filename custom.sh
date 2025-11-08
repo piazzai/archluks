@@ -44,9 +44,9 @@ sudo pacman -S github-cli
 # screenshot utility
 sudo pacman -S maim
 
-# text editor
+# text editors
 sudo pacman -S micro
-sudo pacman -S mousepad
+sudo pacman -S l3afpad
 
 # greeter
 sudo pacman -S ly
