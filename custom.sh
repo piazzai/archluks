@@ -268,6 +268,9 @@ sudo pacman -S ttc-iosevka-slab
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
+# cursor set
+sudo pacman -S xcursor-vanilla-dmz
+
 # tap to click
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo tee << 'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null
