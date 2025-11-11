@@ -253,9 +253,6 @@ sudo pacman -S gimp
 sudo pacman -S inkscape
 sudo pacman -S imagemagick
 
-# dropbox
-yay -S dropbox
-
 # spotify
 yay -S spotify
 
