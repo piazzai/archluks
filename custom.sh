@@ -5,6 +5,9 @@ set -e
 sudo pacman -S ufw
 sudo ufw enable
 
+# disable installation of debug files
+sed -i '98s/debug/!debug/' /etc/makepkg.conf
+
 # aur helper
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
