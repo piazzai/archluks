@@ -122,12 +122,12 @@ sudo pacman -S alsa-utils
 sudo pacman -S pavucontrol
 
 # audio equalizer
-sudo pacman -S easyeffects
+# sudo pacman -S easyeffects
 
 # color and audio profiles
 curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NE135FBM_N41_01.icm \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0'
-curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
+# curl -fsSLO https://github.com/FrameworkComputer/linux-docs/raw/refs/heads/main/easy-effects/fw13-easy-effects.json
 
 # brightness manager
 sudo pacman -S brightnessctl
