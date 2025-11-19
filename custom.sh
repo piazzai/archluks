@@ -175,6 +175,7 @@ R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN =
 
 # vscodium
 yay -S vscodium-bin
+codium --install-extension foam.foam-vscode
 codium --install-extension James-Yu.latex-workshop
 codium --install-extension ms-python.python
 codium --install-extension REditorSupport.r
