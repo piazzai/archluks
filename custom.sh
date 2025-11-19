@@ -240,12 +240,12 @@ sudo pacman -S libreoffice-fresh
 # signal
 sudo pacman -S signal-desktop
 
-# browsers and mail
+# browsers and mail client
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
-yay -S davmail
 yay -S mullvad-browser-bin
 yay -S ungoogled-chromium-bin
-sudo pacman -S thunderbird
+sudo pacman -S evolution
+sudo pacman -S evolution-ews
 
 # graphics
 sudo pacman -S gimp
@@ -256,7 +256,6 @@ sudo pacman -S imagemagick
 yay -S spotify
 
 # typefaces
-yay -S adobe-base-14-fonts
 sudo pacman -S noto-fonts
 sudo pacman -S noto-fonts-cjk
 sudo pacman -S noto-fonts-emoji
