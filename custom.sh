@@ -263,6 +263,7 @@ sudo pacman -S noto-fonts-emoji
 sudo pacman -S ttc-iosevka
 sudo pacman -S ttc-iosevka-aile
 sudo pacman -S ttc-iosevka-etoile
+sudo pacman -S ttc-iosevka-slab
 sudo pacman -S ttf-nerd-fonts-symbols
 sudo pacman -S ttf-nerd-fonts-symbols-mono
 
