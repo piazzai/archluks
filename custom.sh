@@ -13,7 +13,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
 
-# vpn
+# mullvad vpn
 yay -S mullvad-vpn-bin
 mullvad auto-connect set on
 mullvad tunnel set wireguard --daita on
@@ -181,6 +181,9 @@ codium --install-extension ms-python.python
 codium --install-extension REditorSupport.r
 codium --install-extension timonwong.shellcheck
 codium --install-extension yzhang.markdown-all-in-one
+
+# globalprotect vpn
+sudo pacman -S globalprotect-openconnect
 
 # network tools
 sudo pacman -S net-tools
