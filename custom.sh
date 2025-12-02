@@ -188,6 +188,7 @@ sudo pacman -S globalprotect-openconnect
 # network tools
 sudo pacman -S net-tools
 sudo pacman -S nm-connection-editor
+sudo pacman -S traceroute
 
 # disk managers
 sudo pacman -S udisks2
