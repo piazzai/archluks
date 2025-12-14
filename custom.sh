@@ -85,6 +85,7 @@ sudo pacman -S xclip
 sudo pacman -S xdotool
 sudo pacman -S xiccd
 sudo pacman -S xorg
+sudo pacman -S xorg-xinit
 
 # window manager
 sudo pacman -S i3
