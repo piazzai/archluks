@@ -51,18 +51,6 @@ sudo pacman -S maim
 sudo pacman -S micro
 sudo pacman -S l3afpad
 
-# greeter
-sudo pacman -S ly
-sudo sed -i 's/^\(animation =\) none/\1 doom/' /etc/ly/config.ini
-sudo sed -i 's/^\(brightness_down_key =\) F5/\1 null/' /etc/ly/config.ini
-sudo sed -i 's/^\(brightness_up_key =\) F6/\1 null/' /etc/ly/config.ini
-sudo sed -i 's/^\(clear_password =\) false/\1 true/' /etc/ly/config.ini
-sudo sed -i 's/^\(clock =\) null/\1 %Y-%m-%d %H:%M:%S %Z/' /etc/ly/config.ini
-sudo sed -i 's/^\(default_input =\) login/\1 password/' /etc/ly/config.ini
-sudo sed -i 's/^\(hide_borders =\) false/\1 true/' /etc/ly/config.ini
-sudo sed -i 's/^\(initial_info_text =\) null/\1 arch linux/' /etc/ly/config.ini
-sudo systemctl enable ly
-
 # file system trimming
 sudo systemctl enable fstrim.timer
 
