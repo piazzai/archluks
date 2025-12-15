@@ -107,5 +107,8 @@ cd ~ && curl -fsSLO https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______N
 sudo cp BOE_CQ_______NE135FBM_N41_01.icm /usr/share/color/icc/colord/
 colormgr device-add-profile xrandr-BOE "$(colormgr get-profiles | grep -A1 BOE | grep ID | sed 's/^.*icc/icc/')"
 
+# use gnome-keyring for codium passwords (after launching codium)
+sed -i '/{/a\\t"password-store": "gnome-keyring",' ~/.vscode-oss/argv.json
+
 # setup printer (after configuring via cups)
 sudo hp-setup -i
