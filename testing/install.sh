@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # enable firewall
 sudo ufw enable
