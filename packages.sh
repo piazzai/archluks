@@ -65,7 +65,6 @@ sudo pacman -S acpi \
   ruby \
   ruby-bundler \
   ruby-erb \
-  seahorse \
   shellcheck \
   signal-desktop \
   simple-scan \
