@@ -33,7 +33,6 @@ sudo pacman -S acpi \
   i3 \
   imagemagick \
   inkscape \
-  intel-ucode \
   keepassxc \
   l3afpad \
   less \
@@ -41,7 +40,6 @@ sudo pacman -S acpi \
   maim \
   mupdf-gl \
   nano \
-  networkmanager \
   net-tools \
   nm-connection-editor \
   nodejs \
@@ -68,7 +66,6 @@ sudo pacman -S acpi \
   shellcheck \
   signal-desktop \
   simple-scan \
-  sudo \
   sysstat \
   system-config-printer \
   texlive \
