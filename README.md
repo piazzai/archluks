@@ -1,6 +1,6 @@
 # archluks
 
-These are configuration files and scripts for an encrypted Arch Linux installation. The JSON files include instructions for the [archinstall](https://archlinux.org/packages/extra/any/archinstall/) script. They assume there is a 2 TB NVMe drive at `/dev/nvme0n1`, to be wiped and partitioned into a fat32 EFI boot module and an ext4 LUKS-encrypted root. The EFI module is allocated 500 MB and the root is allocated the rest.
+These are configuration files and scripts for an encrypted Arch Linux installation. The JSON files include instructions for the [archinstall](https://archlinux.org/packages/extra/any/archinstall/) script. They assume there is a 2 TB NVMe drive at `/dev/nvme0n1`, to be wiped and partitioned into a FAT32 EFI boot module and an Ext4 LUKS-encrypted root. The EFI module is allocated 500 MB and the root is allocated the rest.
 
 The script installs the systemd boot manager, enables zram, and then configures a minimal OS with display server, audio server, connection manager, and bluetooth daemons, along with all available open-source graphics drivers. The timezone is set to `Europe/London`, the system language to `en_US.UTF-8`, and the keyboard layout to `us`. All of these settings, as well as the size of EFI and root partitions, can be changed within archinstall to suit your needs.
 
