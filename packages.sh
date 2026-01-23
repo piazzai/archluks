@@ -103,5 +103,6 @@ yay -S cryptomator-bin
 yay -S cryptomator-cli
 yay -S mullvad-vpn-bin
 yay -S spotify
+yay -S tutanota-desktop-bin
 yay -S ungoogled-chromium-bin
 yay -S vscodium-bin
