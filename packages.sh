@@ -19,6 +19,7 @@ sudo pacman -S acpi \
   feh \
   firefox \
   fprintd \
+  fwupd \
   gcc-fortran \
   gimp \
   git \
