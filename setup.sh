@@ -28,8 +28,8 @@ sudo systemctl enable tlp.service
 # add user to docker group
 sudo usermod -aG docker "$(whoami)"
 
-# use apparmor as default security module and quiet boot
-sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,integrity,apparmor,bpf/' "$(find /boot/loader/entries -name '*linux.conf')"
+# add apparmor security module, lock down kernel, and quiet boot
+sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,integrity,apparmor,bpf lockdown=confidentiality/' "$(find /boot/loader/entries -name '*linux.conf')"
 
 # disable installation of debug packages
 sudo sed -i 's/^\(OPTIONS.*\) debug/\1 !debug/' /etc/makepkg.conf
