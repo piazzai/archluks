@@ -48,6 +48,7 @@ mullvad relay set ownership owned
 mullvad dns set default --block-ads --block-malware --block-trackers
 
 # install codium extensions
+codium --install-extension esbenp.prettier-vscode
 codium --install-extension foam.foam-vscode
 codium --install-extension James-Yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
