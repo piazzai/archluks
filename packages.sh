@@ -40,7 +40,6 @@ sudo pacman -S acpi \
   libreoffice-fresh \
   maim \
   mupdf-gl \
-  nano \
   networkmanager \
   net-tools \
   nm-connection-editor \
@@ -49,6 +48,7 @@ sudo pacman -S acpi \
   noto-fonts-cjk \
   noto-fonts-emoji \
   npm \
+  nvim \
   openssh \
   pacman-contrib \
   pandoc \
