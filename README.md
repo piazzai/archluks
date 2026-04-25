@@ -28,14 +28,6 @@ curl -fsSLO https://github.com/piazzai/archluks/raw/refs/heads/master/user_crede
 
 You should edit `user_credentials.json` to include your desired encryption password.
 
-```bash
-nano user_credentials.json
-```
-
-```json
-"encryption_password": "<your-password>"
-```
-
 If you want to securely erase the drive before proceeding, then type `bash erase.sh` and answer yes to the prompt. When that process is complete, launch archinstall passing the configuration and credential files.
 
 ```bash
