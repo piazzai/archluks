@@ -36,7 +36,6 @@ sudo pacman -S acpi \
   inkscape \
   intel-ucode \
   keepassxc \
-  l3afpad \
   less \
   libreoffice-fresh \
   maim \
