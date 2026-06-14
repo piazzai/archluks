@@ -68,6 +68,7 @@ sudo pacman -S acpi \
   shellcheck \
   signal-desktop \
   simple-scan \
+  socat \
   sudo \
   sysstat \
   system-config-printer \
