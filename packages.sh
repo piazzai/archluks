@@ -39,6 +39,7 @@ sudo pacman -S acpi \
   less \
   libreoffice-fresh \
   maim \
+  mullvad-vpn \
   mupdf-gl \
   networkmanager \
   net-tools \
@@ -103,7 +104,6 @@ sudo pacman -S acpi \
 yay -S adobe-base-14-fonts
 yay -S cryptomator-bin
 yay -S cryptomator-cli
-yay -S mullvad-vpn-bin
 yay -S spotify
 yay -S ungoogled-chromium-bin
 yay -S vscodium-bin
