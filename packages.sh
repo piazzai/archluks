@@ -85,7 +85,6 @@ sudo pacman -S acpi \
   udisks2 \
   ufw \
   uv \
-  viewnior \
   vlc \
   vlc-plugin-ffmpeg \
   xarchiver \
