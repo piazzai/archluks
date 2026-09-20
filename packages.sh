@@ -75,6 +75,7 @@ sudo pacman -S acpi \
   signal-desktop \
   simple-scan \
   sudo \
+  superfile \
   sysstat \
   system-config-printer \
   texlive \
@@ -92,8 +93,7 @@ sudo pacman -S acpi \
   vlc \
   vlc-plugin-ffmpeg \
   xarchiver \
-  xdg-desktop-portal-hyprland \
-  yazi
+  xdg-desktop-portal-hyprland
 
 yay -S adobe-base-14-fonts
 yay -S cryptomator-bin
