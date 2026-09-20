@@ -54,6 +54,7 @@ codium --install-extension James-Yu.latex-workshop
 codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension ms-python.python
 codium --install-extension REditorSupport.r
+codium --install-extension sumneko.lua
 codium --install-extension timonwong.shellcheck
 codium --install-extension yzhang.markdown-all-in-one
 
