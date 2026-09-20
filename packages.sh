@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo pacman -S acpi \
-  alacritty \
   alsa-utils \
   apparmor \
   arandr \
@@ -36,6 +35,7 @@ sudo pacman -S acpi \
   inkscape \
   intel-ucode \
   keepassxc \
+  kitty \
   less \
   libreoffice-fresh \
   maim \
