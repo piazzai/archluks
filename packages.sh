@@ -26,7 +26,6 @@ sudo pacman -S acpi \
   github-cli \
   globalprotect-openconnect \
   gnome-disk-utility \
-  gnome-keyring \
   gucharmap \
   gvfs \
   hplip \
