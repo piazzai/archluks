@@ -63,7 +63,6 @@ sudo pacman -S acpi \
   pandoc \
   pass \
   pavucontrol \
-  pcmanfm \
   perl-file-homedir \
   perl-yaml-tiny \
   r \
@@ -76,6 +75,7 @@ sudo pacman -S acpi \
   signal-desktop \
   simple-scan \
   sudo \
+  superfile \
   sysstat \
   system-config-printer \
   texlive \
