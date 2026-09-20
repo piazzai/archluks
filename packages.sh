@@ -80,10 +80,7 @@ sudo pacman -S acpi \
   tlp \
   traceroute \
   tree \
-  ttc-iosevka \
-  ttc-iosevka-aile \
-  ttc-iosevka-etoile \
-  ttc-iosevka-slab \
+  ttf-fira-code \
   ttf-nerd-fonts-symbols \
   ttf-nerd-fonts-symbols-mono \
   udisks2 \
