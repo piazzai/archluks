@@ -3,14 +3,12 @@
 sudo pacman -S acpi \
   alsa-utils \
   apparmor \
-  arandr \
   bluetui \
   bottom \
   brightnessctl \
   clamav \
   cups \
   dbeaver \
-  dmenu \
   docker \
   docker-compose \
   dunst \
@@ -29,7 +27,16 @@ sudo pacman -S acpi \
   gucharmap \
   gvfs \
   hplip \
-  i3 \
+  hypridle \
+  hyprland \
+  hyprlauncher \
+  hyprlock \
+  hyprpaper \
+  hyprpicker \
+  hyprpolkitagent \
+  hyprpwcenter \
+  hyprshutdown \
+  hyprsunset \
   imagemagick \
   inkscape \
   intel-ucode \
@@ -59,10 +66,8 @@ sudo pacman -S acpi \
   pcmanfm \
   perl-file-homedir \
   perl-yaml-tiny \
-  picom \
   r \
   reflector \
-  rofi \
   rsync \
   ruby \
   ruby-bundler \
@@ -88,13 +93,7 @@ sudo pacman -S acpi \
   vlc \
   vlc-plugin-ffmpeg \
   xarchiver \
-  xcalib \
-  xclip \
-  xcursor-vanilla-dmz \
-  xdotool \
-  xiccd \
-  xorg \
-  xorg-xinit
+  xdg-desktop-portal-hyprland
 
 yay -S adobe-base-14-fonts
 yay -S cryptomator-bin
