@@ -56,8 +56,6 @@ sudo pacman -S acpi \
   noto-fonts-emoji \
   npm \
   nvim \
-  ollama \
-  opencode \
   openssh \
   pacman-contrib \
   pandoc \
