@@ -90,6 +90,7 @@ sudo pacman -S acpi \
   uv \
   vlc \
   vlc-plugin-ffmpeg \
+  wlr-randr \
   xarchiver \
   xdg-desktop-portal-hyprland
 
