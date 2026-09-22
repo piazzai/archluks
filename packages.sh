@@ -31,11 +31,8 @@ sudo pacman -S acpi \
   hyprland \
   hyprlock \
   hyprpaper \
-  hyprpicker \
   hyprpolkitagent \
-  hyprpwcenter \
   hyprshutdown \
-  hyprsunset \
   imagemagick \
   inkscape \
   intel-ucode \
