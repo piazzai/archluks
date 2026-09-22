@@ -92,7 +92,8 @@ sudo pacman -S acpi \
   vlc-plugin-ffmpeg \
   wlr-randr \
   xarchiver \
-  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-hyprland \
+  yazi
 
 yay -S adobe-base-14-fonts
 yay -S cryptomator-bin
