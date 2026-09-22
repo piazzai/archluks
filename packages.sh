@@ -29,7 +29,6 @@ sudo pacman -S acpi \
   hplip \
   hypridle \
   hyprland \
-  hyprlauncher \
   hyprlock \
   hyprpaper \
   hyprpicker \
@@ -66,6 +65,7 @@ sudo pacman -S acpi \
   perl-yaml-tiny \
   r \
   reflector \
+  rofi \
   rsync \
   ruby \
   ruby-bundler \
