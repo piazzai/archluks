@@ -4,7 +4,7 @@ sudo pacman -S acpi \
   alsa-utils \
   apparmor \
   blueman \
-  btop \
+  bottom \
   brightnessctl \
   clamav \
   cups \
