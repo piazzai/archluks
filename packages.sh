@@ -41,6 +41,7 @@ sudo pacman -S acpi \
   less \
   libreoffice-fresh \
   maim \
+  mesa-utils \
   mullvad-vpn \
   mupdf-gl \
   networkmanager \
