@@ -3,7 +3,7 @@
 sudo pacman -S acpi \
   alsa-utils \
   apparmor \
-  bluetui \
+  blueman \
   btop \
   brightnessctl \
   clamav \
