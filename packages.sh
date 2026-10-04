@@ -36,6 +36,7 @@ sudo pacman -S acpi \
   imagemagick \
   inkscape \
   intel-ucode \
+  jq \
   keepassxc \
   kitty \
   less \
