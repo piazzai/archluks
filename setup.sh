@@ -25,6 +25,10 @@ sudo systemctl enable docker.service
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable tlp.service
 
+# generate additional locales
+sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
+sudo locale-gen
+
 # add user to docker group
 sudo usermod -aG docker "$(whoami)"
 
