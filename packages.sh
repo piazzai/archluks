@@ -5,6 +5,7 @@ sudo pacman -S acpi \
   apparmor \
   blueman \
   bottom \
+  breeze-cursors \
   brightnessctl \
   clamav \
   cups \
