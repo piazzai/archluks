@@ -15,6 +15,8 @@ sudo systemctl enable reflector.timer
 
 # enable user services
 systemctl --user enable ssh-agent.service
+systemctl --user enable waybar-audio-watch.service
+systemctl --user enable waybar-network-watch.service
 
 # enable other services
 sudo systemctl enable apparmor.service
