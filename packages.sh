@@ -96,6 +96,7 @@ sudo pacman -S acpi \
   yazi
 
 yay -S adobe-base-14-fonts
+yay -S cnijfilter2
 yay -S cryptomator-bin
 yay -S cryptomator-cli
 yay -S spotify
