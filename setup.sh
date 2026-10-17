@@ -14,16 +14,16 @@ sudo systemctl enable paccache.timer
 sudo systemctl enable reflector.timer
 
 # enable user services
-systemctl --user enable ssh-agent.service
+systemctl --user enable ssh-agent
 
 # enable other services
-sudo systemctl enable apparmor.service
-sudo systemctl enable bluetooth.service
-sudo systemctl enable clamav-freshclam.service
-sudo systemctl enable cups.service
-sudo systemctl enable docker.service
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable tlp.service
+sudo systemctl enable apparmor
+sudo systemctl enable bluetooth
+sudo systemctl enable clamav-freshclam
+sudo systemctl enable cups
+sudo systemctl enable docker
+sudo systemctl enable NetworkManager
+sudo systemctl enable tlp
 
 # generate additional locales
 sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
