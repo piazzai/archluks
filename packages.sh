@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo pacman -S acpi \
+sudo pacman -S 7zip \
+  acpi \
   alsa-utils \
   apparmor \
   blueman \
@@ -9,12 +10,12 @@ sudo pacman -S acpi \
   brightnessctl \
   clamav \
   cups \
+  cups-pdf \
   dbeaver \
   docker \
   docker-compose \
   dunst \
   fastfetch \
-  feh \
   firefox \
   fprintd \
   fwupd \
@@ -37,12 +38,12 @@ sudo pacman -S acpi \
   imagemagick \
   inkscape \
   intel-ucode \
+  ipp-usb \
   jq \
   keepassxc \
   kitty \
   less \
   libreoffice-fresh \
-  maim \
   mesa-utils \
   mullvad-vpn \
   mupdf-gl \
@@ -54,6 +55,7 @@ sudo pacman -S acpi \
   noto-fonts-cjk \
   noto-fonts-emoji \
   npm \
+  nss-mdns \
   nvim \
   openssh \
   pacman-contrib \
@@ -70,6 +72,8 @@ sudo pacman -S acpi \
   ruby \
   ruby-bundler \
   ruby-erb \
+  sane \
+  sane-airscan \
   shellcheck \
   signal-desktop \
   simple-scan \
@@ -82,7 +86,12 @@ sudo pacman -S acpi \
   tlp \
   traceroute \
   tree \
-  ttf-fira-code \
+  ttc-iosevka \
+  ttc-iosevka-aile \
+  ttc-iosevka-etoile \
+  ttc-iosevka-slab \
+  ttf-cormorant \
+  ttf-montserrat \
   ttf-nerd-fonts-symbols \
   ttf-nerd-fonts-symbols-mono \
   udisks2 \
@@ -96,7 +105,6 @@ sudo pacman -S acpi \
   yazi
 
 yay -S adobe-base-14-fonts
-yay -S cnijfilter2
 yay -S cryptomator-bin
 yay -S cryptomator-cli
 yay -S spotify
