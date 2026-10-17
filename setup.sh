@@ -18,10 +18,12 @@ systemctl --user enable ssh-agent
 
 # enable other services
 sudo systemctl enable apparmor
+sudo systemctl enable avahi-daemon
 sudo systemctl enable bluetooth
 sudo systemctl enable clamav-freshclam
 sudo systemctl enable cups
 sudo systemctl enable docker
+sudo systemctl enable ipp-usb
 sudo systemctl enable NetworkManager
 sudo systemctl enable tlp
 
