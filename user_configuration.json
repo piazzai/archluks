@@ -128,7 +128,7 @@
     "profile": {
       "custom_settings": {},
       "details": [],
-      "main": "Xorg"
+      "main": "Wayland"
     }
   },
   "script": null,
