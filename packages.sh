@@ -65,6 +65,9 @@ sudo pacman -S 7zip \
   pcmanfm \
   perl-file-homedir \
   perl-yaml-tiny \
+  python3-dbus-fast \
+  python3-pywayland \
+  python3-xkbcommon \
   r \
   reflector \
   rofi \
