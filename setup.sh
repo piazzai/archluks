@@ -95,7 +95,7 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # install pyrtal (for autotype)
-git clone https://github.com/hifi/xdg-desktop-portal-pyrtal
-cd xdg-desktop-portal-pyrtal
+mkdir -p ~/.local/share
+git clone https://github.com/hifi/xdg-desktop-portal-pyrtal ~/.local/share/xdg-desktop-portal-pyrtal
+cd ~/.local/share/xdg-desktop-portal-pyrtal
 python3 -m pyrtal install
-cd .. && rm -rf xdg-desktop-portal-pyrtal
