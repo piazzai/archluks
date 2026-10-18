@@ -98,3 +98,4 @@ sudo udevadm trigger
 git clone https://github.com/hifi/xdg-desktop-portal-pyrtal
 cd xdg-desktop-portal-pyrtal
 python3 -m pyrtal install
+cd .. && rm -rf xdg-desktop-portal-pyrtal
