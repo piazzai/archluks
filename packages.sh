@@ -26,6 +26,7 @@ sudo pacman -S 7zip \
   github-cli \
   globalprotect-openconnect \
   gnome-disk-utility \
+  grim \
   gucharmap \
   gvfs \
   hplip \
@@ -80,6 +81,7 @@ sudo pacman -S 7zip \
   shellcheck \
   signal-desktop \
   simple-scan \
+  slurp \
   sudo \
   sysstat \
   system-config-printer \
@@ -102,6 +104,7 @@ sudo pacman -S 7zip \
   uv \
   vlc \
   vlc-plugin-ffmpeg \
+  wf-recorder \
   wlr-randr \
   xarchiver \
   xdg-desktop-portal-hyprland \
