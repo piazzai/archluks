@@ -32,6 +32,7 @@ sudo pacman -S 7zip \
   hplip \
   hypridle \
   hyprland \
+  hyprlauncher \
   hyprlock \
   hyprpaper \
   hyprpolkitagent \
@@ -71,7 +72,6 @@ sudo pacman -S 7zip \
   python3-xkbcommon \
   r \
   reflector \
-  rofi \
   rsync \
   ruby \
   ruby-bundler \
