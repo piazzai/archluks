@@ -100,6 +100,10 @@ git clone https://github.com/hifi/xdg-desktop-portal-pyrtal ~/.local/share/xdg-d
 cd ~/.local/share/xdg-desktop-portal-pyrtal
 python3 -m pyrtal install
 
+# enable fingerprint auth
+sudo sed -i '/^$/aauth sufficient pam_fprintd.so max-tries=3' /etc/pam.d/login
+sudo sed -i '/^$/aauth sufficient pam_unix.so try_first_pass likeauth nullok\nauth sufficient pam_fprintd.so' /etc/pam.d/system-local-login
+
 # enroll fingerprints
 fprintd-enroll -f left-index-finger
 fprintd-enroll -f right-index-finger
