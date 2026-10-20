@@ -101,8 +101,7 @@ cd ~/.local/share/xdg-desktop-portal-pyrtal
 python3 -m pyrtal install
 
 # enable fingerprint auth
-sudo sed -i '/^$/aauth sufficient pam_fprintd.so max-tries=3' /etc/pam.d/login
-sudo sed -i '/^$/aauth sufficient pam_unix.so try_first_pass likeauth nullok\nauth sufficient pam_fprintd.so' /etc/pam.d/system-local-login
+sudo sed -i '/^$/aauth sufficient pam_fprintd.so max_tries=3 timeout=10\nauth sufficient pam_unix.so try_first_pass likeauth' /etc/pam.d/system-local-login
 
 # enroll fingerprints
 fprintd-enroll -f left-index-finger
