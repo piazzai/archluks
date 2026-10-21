@@ -96,12 +96,6 @@ sudo sed -i 's/01e0/5c47/' /etc/udev/rules.d/99-ploopy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-# install pyrtal (for autotype)
-mkdir -p ~/.local/share
-git clone https://github.com/hifi/xdg-desktop-portal-pyrtal ~/.local/share/xdg-desktop-portal-pyrtal
-cd ~/.local/share/xdg-desktop-portal-pyrtal
-python3 -m pyrtal install
-
 # enable fingerprint auth
 PAMFILE=/etc/pam.d/system-local-login
 if ! grep -q 'pam_fprintd.so' "$PAMFILE"; then
