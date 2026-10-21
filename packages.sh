@@ -181,3 +181,21 @@ sudo pacman -S --needed --noconfirm \
 sudo pacman -S --needed --noconfirm \
   intel-ucode
 
+if ! command -v yay >/dev/null; then
+  rm -rf /tmp/yay
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  (cd /tmp/yay && makepkg -si --noconfirm)
+  rm -rf /tmp/yay
+fi
+
+command -v yay >/dev/null || { echo "error: yay installation failed" >&2; exit 1; }
+
+
+if ! command -v "$HOME/.local/bin/pyrtal" >/dev/null; then
+  rm -rf "$HOME/.local/share/xdg-desktop-portal-pyrtal"
+  mkdir -p "$HOME/.local/share"
+  git clone https://github.com/hifi/xdg-desktop-portal-pyrtal "$HOME/.local/share/xdg-desktop-portal-pyrtal"
+  (cd "$HOME/.local/share/xdg-desktop-portal-pyrtal" && python -m pyrtal install)
+fi
+
+command -v "$HOME/.local/bin/pyrtal" >/dev/null || { echo "error: pyrtal installation failed" >&2; exit 1; }
