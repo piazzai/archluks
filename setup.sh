@@ -33,23 +33,17 @@ sudo locale-gen
 sudo usermod -aG docker "$(whoami)"
 
 # add apparmor security module, lock down kernel, and quiet boot
-sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,integrity,apparmor,bpf lockdown=confidentiality/' "$(find /boot/loader/entries -name '*linux.conf')"
+LOADER="$(find /boot/loader/entries -name '*linux.conf')"
+if ! grep -q 'quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality' "$LOADER"; then
+  sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality/' "$LOADER"
+fi
 
 # disable installation of debug packages
 sudo sed -i 's/^\(OPTIONS.*\) debug/\1 !debug/' /etc/makepkg.conf
 
 # configure package manager
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
-sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
-
-# set up mullvad vpn
-mullvad auto-connect set on
-mullvad lan set allow
-mullvad tunnel set daita on
-mullvad relay set location ch
-mullvad relay set multihop on
-mullvad relay set ownership owned
-mullvad dns set default --block-ads --block-malware --block-trackers
+grep -q '^ILoveCandy' /etc/pacman.conf || sudo sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 
 # install codium extensions
 codium --install-extension esbenp.prettier-vscode
@@ -99,7 +93,10 @@ cd ~/.local/share/xdg-desktop-portal-pyrtal
 python3 -m pyrtal install
 
 # enable fingerprint auth
-sudo sed -i '/^$/aauth sufficient pam_fprintd.so max_tries=3 timeout=10\nauth sufficient pam_unix.so try_first_pass likeauth' /etc/pam.d/system-local-login
+PAMFILE=/etc/pam.d/system-local-login
+if ! grep -q 'pam_fprintd.so' "$PAMFILE"; then
+  sudo sed -i '0,/^auth /s//auth sufficient pam_fprintd.so max_tries=3 timeout=10\nauth sufficient pam_unix.so try_first_pass likeauth\nauth /' "$PAMFILE"
+fi
 
 # enroll fingerprints
 fprintd-enroll -f left-index-finger
