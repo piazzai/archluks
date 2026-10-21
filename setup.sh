@@ -40,10 +40,20 @@ sudo locale-gen
 sudo usermod -aG docker "$(whoami)"
 
 # add apparmor security module, lock down kernel, and quiet boot
-LOADER="$(find /boot/loader/entries -name '*linux.conf')"
-if ! grep -q 'quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality' "$LOADER"; then
-  sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality/' "$LOADER"
+# LOADER="$(find /boot/loader/entries -name '*linux.conf')"
+# if ! grep -q 'quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality' "$LOADER"; then
+  # sudo sed -i 's/rw/rw quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity lockdown=confidentiality/' "$LOADER"
+# fi
+
+ROOT_PARAM="$(grep -oP 'root=\S+' "$(find /boot/loader/entries -name '*linux.conf')")"
+CMDLINE_FILE=/etc/kernel/cmdline
+CMDLINE="${ROOT_PARAM} rw quiet lsm=landlock,lockdown,yama,apparmor,bpf,integrity rootfstype=ext4 lockdown=confidentiality"
+
+if [[ ! -f "$CMDLINE_FILE" ]] || [[ "$(cat "$CMDLINE_FILE")" != "$CMDLINE" ]]; then
+  echo "$CMDLINE" | sudo tee "$CMDLINE_FILE" > /dev/null
+  sudo kernel-install add "$(uname -r)" /boot/vmlinuz-linux
 fi
+
 
 # disable installation of debug packages
 sudo sed -i 's/^\(OPTIONS.*\) debug/\1 !debug/' /etc/makepkg.conf
@@ -95,6 +105,12 @@ sudo sed -i 's/3434/5043/' /etc/udev/rules.d/99-ploopy.rules
 sudo sed -i 's/01e0/5c47/' /etc/udev/rules.d/99-ploopy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
+
+# install pyrtal (for autotype)
+mkdir -p ~/.local/share
+git clone https://github.com/hifi/xdg-desktop-portal-pyrtal ~/.local/share/xdg-desktop-portal-pyrtal
+cd ~/.local/share/xdg-desktop-portal-pyrtal
+python3 -m pyrtal install
 
 # enable fingerprint auth
 PAMFILE=/etc/pam.d/system-local-login
