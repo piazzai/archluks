@@ -16,15 +16,7 @@ sudo systemctl enable reflector.timer
 systemctl --user enable ssh-agent
 
 # enable other services
-sudo systemctl enable apparmor
-sudo systemctl enable avahi-daemon
-sudo systemctl enable bluetooth
-sudo systemctl enable clamav-freshclam
-sudo systemctl enable cups
-sudo systemctl enable docker
-sudo systemctl enable ipp-usb
-sudo systemctl enable NetworkManager
-sudo systemctl enable tlp
+sudo systemctl enable --now mullvad-daemon
 
 # generate additional locales
 sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
