@@ -190,6 +190,13 @@ fi
 
 command -v yay >/dev/null || { echo "error: yay installation failed" >&2; exit 1; }
 
+yay -S --needed --noconfirm \
+  adobe-base-14-fonts \
+  cryptomator-bin \
+  cryptomator-cli \
+  spotify \
+  ungoogled-chromium-bin \
+  vscodium-bin
 
 if ! command -v "$HOME/.local/bin/pyrtal" >/dev/null; then
   rm -rf "$HOME/.local/share/xdg-desktop-portal-pyrtal"
