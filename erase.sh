@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 DEVICE=/dev/nvme0n1
 

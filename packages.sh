@@ -1,7 +1,5 @@
 #!/bin/bash
-
-sudo pacman -S 7zip \
-  acpi \
+set -euo pipefail
   alsa-utils \
   apparmor \
   blueman \
