@@ -113,3 +113,8 @@ sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf > /dev/null << E
 ExecStart=
 ExecStart=-/bin/login -- $(whoami)
 EOF
+
+read -rp "reboot? [y/N] " REBOOT
+if [[ "$REBOOT" == [Yy] || "$REBOOT" == [Yy][Ee][Ss] ]]; then
+  sudo reboot
+fi
