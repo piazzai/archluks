@@ -6,95 +6,156 @@ if [[ $EUID -eq 0 ]]; then
   exit 1
 fi
 
-  alsa-utils \
-  apparmor \
-  blueman \
-  bottom \
-  breeze-cursors \
-  brightnessctl \
-  clamav \
-  cups \
-  cups-pdf \
-  dbeaver \
-  docker \
-  docker-compose \
-  dunst \
-  fastfetch \
-  firefox \
-  fprintd \
-  fwupd \
-  gcc-fortran \
-  gimp \
-  git \
-  git-lfs \
-  github-cli \
-  globalprotect-openconnect \
-  gnome-disk-utility \
-  grim \
-  gucharmap \
-  gvfs \
-  hplip \
-  hypridle \
+sudo pacman -Syu --noconfirm
+
+# hyprland compositor and wayland core
+sudo pacman -S --needed --noconfirm \
   hyprland \
+  hypridle \
   hyprlauncher \
   hyprlock \
   hyprpaper \
   hyprpolkitagent \
   hyprshutdown \
-  imagemagick \
-  inkscape \
-  intel-ucode \
-  ipp-usb \
-  jq \
-  keepassxc \
-  kitty \
-  less \
-  libreoffice-fresh \
   mesa-utils \
+  seatd \
+  xdg-desktop-portal-hyprland \
+  wayland \
+  wayland-protocols
+
+# display and backlight
+sudo pacman -S --needed --noconfirm \
+  brightnessctl \
+  shikane \
+  wlr-randr
+
+# screenshots and recording
+sudo pacman -S --needed --noconfirm \
+  grim \
+  slurp \
+  wf-recorder
+
+# audio
+sudo pacman -S --needed --noconfirm \
+  alsa-utils \
+  pavucontrol
+
+# bluetooth
+sudo pacman -S --needed --noconfirm \
+  blueman
+
+# networking
+sudo pacman -S --needed --noconfirm \
+  globalprotect-openconnect \
   mullvad-vpn \
-  mupdf-gl \
-  networkmanager \
+  openssh \
   net-tools \
   nm-connection-editor \
-  nodejs \
-  noto-fonts \
-  noto-fonts-cjk \
-  noto-fonts-emoji \
-  npm \
   nss-mdns \
-  nvim \
-  openssh \
-  pacman-contrib \
-  pandoc \
+  traceroute \
+  reflector
+
+# security and authentication
+sudo pacman -S --needed --noconfirm \
+  apparmor \
+  clamav \
+  fprintd \
+  keepassxc \
   pass \
-  pavucontrol \
-  pcmanfm \
+  sudo \
+  ufw
+
+# printing and scanning
+sudo pacman -S --needed --noconfirm \
+  cups \
+  cups-pdf \
+  hplip \
+  ipp-usb \
+  sane \
+  sane-airscan \
+  simple-scan \
+  system-config-printer
+
+# disk, storage, and archives
+sudo pacman -S --needed --noconfirm \
+  7zip \
+  gnome-disk-utility \
+  gvfs \
+  udisks2 \
+  xarchiver
+
+# system monitorin and firmware
+sudo pacman -S --needed --noconfirm \
+  acpi \
+  bottom \
+  fastfetch \
+  sysstat \
+  fwupd
+
+# dev tools
+sudo pacman -S --needed --noconfirm \
+  base-devel \
+  dbeaver \
+  docker \
+  docker-compose \
+  gcc-fortran \
+  git \
+  git-lfs \
+  github-cli \
+  nodejs \
+  pacman-contrib \
   perl-file-homedir \
   perl-yaml-tiny \
-  python3-dbus-fast \
-  python3-pywayland \
-  python3-xkbcommon \
+  python-dbus-fast \
+  python-pywayland \
+  python-xkbcommon \
   r \
-  reflector \
-  rsync \
   ruby \
   ruby-bundler \
   ruby-erb \
-  sane \
-  sane-airscan \
   shellcheck \
-  signal-desktop \
-  simple-scan \
-  slurp \
-  sudo \
-  sysstat \
-  system-config-printer \
-  texlive \
-  texlive-langgreek \
-  thunderbird \
-  tlp \
-  traceroute \
+  uv
+
+# terminal and file management
+sudo pacman -S --needed --noconfirm \
+  kitty \
+  jq \
+  less \
+  pcmanfm \
+  rsync \
   tree \
+  yazi
+
+# documents and office
+sudo pacman -S --needed --noconfirm \
+  libreoffice-fresh \
+  mupdf \
+  pandoc-cli \
+  texlive \
+  texlive-langgreek
+
+# graphics and image editing
+sudo pacman -S --needed --noconfirm \
+  gimp \
+  imagemagick \
+  inkscape
+
+# web and communication
+sudo pacman -S --needed --noconfirm \
+  firefox \
+  thunderbird \
+  signal-desktop
+
+# media playback
+sudo pacman -S --needed --noconfirm \
+  vlc \
+  vlc-plugin-ffmpeg
+
+# fonts
+sudo pacman -S --needed --noconfirm \
+  noto-fonts \
+  noto-fonts-cjk \
+  noto-fonts-emoji \
   ttc-iosevka \
   ttc-iosevka-aile \
   ttc-iosevka-etoile \
@@ -102,21 +163,21 @@ fi
   ttf-cormorant \
   ttf-montserrat \
   ttf-nerd-fonts-symbols \
-  ttf-nerd-fonts-symbols-mono \
-  udisks2 \
-  ufw \
-  uv \
-  vlc \
-  vlc-plugin-ffmpeg \
-  wf-recorder \
-  wlr-randr \
-  xarchiver \
-  xdg-desktop-portal-hyprland \
-  yazi
+  ttf-nerd-fonts-symbols-mono
 
-yay -S adobe-base-14-fonts
-yay -S cryptomator-bin
-yay -S cryptomator-cli
-yay -S spotify
-yay -S ungoogled-chromium-bin
-yay -S vscodium-bin
+# cursors
+sudo pacman -S --needed --noconfirm \
+  breeze-cursors
+
+# character map
+sudo pacman -S --needed --noconfirm \
+  gucharmap
+
+# power management
+sudo pacman -S --needed --noconfirm \
+  tlp
+
+# cpu microcode
+sudo pacman -S --needed --noconfirm \
+  intel-ucode
+
