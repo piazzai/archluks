@@ -8,15 +8,22 @@ sudo ufw enable
 sudo freshclam
 
 # enable timed services
-sudo systemctl enable fstrim.timer
-sudo systemctl enable paccache.timer
-sudo systemctl enable reflector.timer
-
-# enable user services
-systemctl --user enable ssh-agent
+sudo systemctl enable --now fstrim.timer
+sudo systemctl enable --now paccache.timer
+sudo systemctl enable --now reflector.timer
 
 # enable other services
+sudo systemctl enable --now apparmor
+sudo systemctl enable --now avahi-daemon
+sudo systemctl enable --now bluetooth
+sudo systemctl enable --now clamav-freshclam
+sudo systemctl enable --now cups
+sudo systemctl enable --now docker
+sudo systemctl enable --now ipp-usb
 sudo systemctl enable --now mullvad-daemon
+sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now tlp
+
 
 # generate additional locales
 sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
