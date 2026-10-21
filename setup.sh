@@ -73,6 +73,9 @@ R -e "install.packages('renv', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN =
 R -e "install.packages('stringi', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 R -e "install.packages('tidyverse', lib = Sys.getenv('R_LIBS_USER'), repos = c(CRAN = 'https://cran.r-project.org'))"
 
+# enable user services
+systemctl --user enable ssh-agent
+
 # enable tap to click
 sudo tee << 'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null
 Section "InputClass"
