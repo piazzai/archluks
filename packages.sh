@@ -1,5 +1,11 @@
 #!/bin/bash
 set -euo pipefail
+
+if [[ $EUID -eq 0 ]]; then
+  echo "error: do not run this script as root" >&2
+  exit 1
+fi
+
   alsa-utils \
   apparmor \
   blueman \
