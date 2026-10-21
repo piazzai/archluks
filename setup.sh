@@ -105,3 +105,11 @@ fi
 # enroll fingerprints
 fprintd-enroll -f left-index-finger
 fprintd-enroll -f right-index-finger
+
+# skip username input at login
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf > /dev/null << EOF
+[Service]
+ExecStart=
+ExecStart=-/bin/login -- $(whoami)
+EOF
