@@ -24,6 +24,13 @@ sudo systemctl enable --now mullvad-daemon
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now tlp
 
+# set up mullvad vpn
+mullvad auto-connect set on
+mullvad tunnel set daita on
+mullvad relay set location gb
+mullvad relay set multihop on
+mullvad relay set ownership owned
+mullvad dns set default --block-ads --block-malware --block-trackers
 
 # generate additional locales
 sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
