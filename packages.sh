@@ -164,6 +164,7 @@ sudo pacman -S --needed --noconfirm \
 sudo pacman -S --needed --noconfirm \
   firefox \
   thunderbird \
+  torbrowser-launcher \
   signal-desktop
 
 # media playback
