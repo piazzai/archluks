@@ -84,7 +84,7 @@ sudo pacman -S --needed --noconfirm \
   udisks2 \
   xarchiver
 
-# system monitorin and firmware
+# system monitoring and firmware
 sudo pacman -S --needed --noconfirm \
   acpi \
   bottom \
