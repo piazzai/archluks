@@ -129,8 +129,8 @@ sudo pacman -S --needed --noconfirm \
   less \
   pcmanfm \
   rsync \
-  tree \
-  yazi
+  superfile \
+  tree
 
 # documents and office
 sudo pacman -S --needed --noconfirm \
