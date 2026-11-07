@@ -98,6 +98,17 @@ sudo pacman -S --needed -noconfirm \
   qt5ct \
   qt6ct
 
+# neovim
+sudo pacamn -S --needed -noconfirm \
+  gcc \
+  make \
+  git \
+  ripgrep \
+  fd \
+  tree-sitter-cli \
+  unzip \
+  neovim
+
 # dev tools
 sudo pacman -S --needed --noconfirm \
   base-devel \
@@ -105,7 +116,6 @@ sudo pacman -S --needed --noconfirm \
   docker \
   docker-compose \
   gcc-fortran \
-  git \
   git-lfs \
   github-cli \
   nodejs \
