@@ -24,7 +24,8 @@ sudo pacman -S --needed --noconfirm \
 
 # application menu
 sudo pacman -S --needed --noconfirm \
-  rofi
+  rofi \
+  rofi-calc
 
 # display and backlight
 sudo pacman -S --needed --noconfirm \
