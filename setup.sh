@@ -66,6 +66,7 @@ grep -q '^ILoveCandy' /etc/pacman.conf || sudo sed -i '/^Color/a ILoveCandy' /et
 codium --install-extension esbenp.prettier-vscode
 codium --install-extension foam.foam-vscode
 codium --install-extension James-Yu.latex-workshop
+codium --install-extension jdinhlife.gruvbox
 codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension ms-python.python
 codium --install-extension REditorSupport.r
