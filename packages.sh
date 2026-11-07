@@ -92,6 +92,12 @@ sudo pacman -S --needed --noconfirm \
   sysstat \
   fwupd
 
+# theming
+sudo pacman -S --needed -noconfirm \
+  nwg-look \
+  qt5ct \
+  qt6ct
+
 # dev tools
 sudo pacman -S --needed --noconfirm \
   base-devel \
