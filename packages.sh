@@ -166,8 +166,6 @@ sudo pacman -S --needed --noconfirm \
   ttc-iosevka-aile \
   ttc-iosevka-etoile \
   ttc-iosevka-slab \
-  ttf-cormorant \
-  ttf-montserrat \
   ttf-nerd-fonts-symbols \
   ttf-nerd-fonts-symbols-mono
 
