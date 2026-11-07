@@ -169,10 +169,6 @@ sudo pacman -S --needed --noconfirm \
   ttf-nerd-fonts-symbols \
   ttf-nerd-fonts-symbols-mono
 
-# cursors
-sudo pacman -S --needed --noconfirm \
-  breeze-cursors
-
 # character map
 sudo pacman -S --needed --noconfirm \
   gucharmap
