@@ -12,7 +12,6 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm \
   hyprland \
   hypridle \
-  hyprlauncher \
   hyprlock \
   hyprpaper \
   hyprpolkitagent \
@@ -22,6 +21,10 @@ sudo pacman -S --needed --noconfirm \
   xdg-desktop-portal-hyprland \
   wayland \
   wayland-protocols
+
+# application menu
+sudo pacman -S --needed --noconfirm \
+  rofi
 
 # display and backlight
 sudo pacman -S --needed --noconfirm \
