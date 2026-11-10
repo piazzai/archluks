@@ -14,6 +14,7 @@ sudo pacman -S --needed --noconfirm \
   hypridle \
   hyprlock \
   hyprpaper \
+  hyprpicker \
   hyprpolkitagent \
   hyprshutdown \
   mesa-utils \
