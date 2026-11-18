@@ -30,7 +30,7 @@ mullvad tunnel set daita on
 mullvad relay set location gb
 mullvad relay set multihop on
 mullvad relay set ownership owned
-mullvad dns set default --block-ads --block-malware --block-trackers
+mullvad dns set default --block-ads --block-malware --block-trackers --block-adult-content --block-gambling --block-social-media
 
 # generate additional locales
 sudo sed -i 's/^# en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
